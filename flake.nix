@@ -60,6 +60,6 @@
         formatter = nixpkgs.legacyPackages.${system}.alejandra;
       }))
       # Final target images
-      (import ./targets.nix { inherit self nixos-generators microvm jetpack-nixos; })
+      (import ./targets.nix { inherit self nixpkgs nixos-generators microvm jetpack-nixos; })
     ];
 }

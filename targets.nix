@@ -1,5 +1,6 @@
 {
   self,
+  nixpkgs,
   nixos-generators,
   microvm,
   jetpack-nixos,
@@ -23,9 +24,27 @@
       modules/hardware/nvidia-jetson-orin.nix
 
       microvm.nixosModules.host
+      configurations/host/configuration.nix
     ];
     format = "raw-efi";
   };
+
+  packages.aarch64-linux.nvidia-jetson-orin-flash-script =
+  let
+    image = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        jetpack-nixos.nixosModules.default
+        modules/hardware/nvidia-jetson-orin.nix
+
+        microvm.nixosModules.host
+        configurations/host/configuration.nix
+      ];
+    };
+    config = image.config;
+    pkgs = image.pkgs;
+  in
+    config.hardware.nvidia-jetpack.flashScript;
 
   # Using Orin as a default aarch64 target for now
   packages.aarch64-linux.default = self.packages.aarch64-linux.nvidia-jetson-orin;
