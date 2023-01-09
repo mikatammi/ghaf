@@ -46,7 +46,7 @@
       ];
     in
     # Combine list of attribute sets together
-    nixpkgs.lib.foldr nixpkgs.lib.recursiveUpdate { } [
+    nixpkgs.lib.foldr nixpkgs.lib.recursiveUpdate {} [
       # Documentation
       (flake-utils.lib.eachSystem systems (system: {
         packages =
@@ -60,10 +60,22 @@
         formatter = nixpkgs.legacyPackages.${system}.alejandra;
       }))
 
+      # MicroVM configurations
+      {
+        # Generate VM configurations for every system
+        nixosConfigurations =
+          nixpkgs.lib.foldr nixpkgs.lib.recursiveUpdate
+          {}
+          (map (system: {
+              "netvm-${system}" = import ./configurations/netvm {inherit nixpkgs microvm system;};
+            })
+            systems);
+      }
+
       # NixOS Host Configurations
       {
         nixosConfigurations.nvidia-jetson-orin = let
-          target = import ./targets/nvidia-jetson-orin.nix {inherit jetpack-nixos microvm;};
+          target = import ./targets/nvidia-jetson-orin.nix {inherit self jetpack-nixos microvm;};
         in
           nixpkgs.lib.nixosSystem (
             target

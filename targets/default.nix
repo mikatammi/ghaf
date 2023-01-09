@@ -11,6 +11,14 @@
       ../configurations/host/configuration.nix
       ../modules/development/authentication.nix
       ../modules/development/ssh.nix
+      ../modules/development/nix.nix
+
+      ../modules/hardware/intel.nix
+      ../configurations/host/microvm.nix
+      (import ../configurations/host/netvm.nix {
+        inherit self;
+        system = "x86_64-linux";
+      })
     ];
     format = "vm";
   };
@@ -24,6 +32,14 @@
       ../modules/development/nix.nix
       ../modules/development/authentication.nix
       ../modules/development/ssh.nix
+      ../modules/development/nix.nix
+
+      ../modules/hardware/intel.nix
+      ../configurations/host/microvm.nix
+      (import ../configurations/host/netvm.nix {
+        inherit self;
+        system = "x86_64-linux";
+      })
     ];
     format = "raw-efi";
   };
@@ -31,7 +47,7 @@
   packages.x86_64-linux.default = self.packages.x86_64-linux.vm;
 
   packages.aarch64-linux.nvidia-jetson-orin = nixos-generators.nixosGenerate (
-    import ./nvidia-jetson-orin.nix {inherit jetpack-nixos microvm;}
+    import ./nvidia-jetson-orin.nix {inherit self jetpack-nixos microvm;}
     // {
       format = "raw-efi";
     }

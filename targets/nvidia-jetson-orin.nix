@@ -1,4 +1,5 @@
 {
+  self,
   jetpack-nixos,
   microvm,
 }: {
@@ -15,5 +16,11 @@
     ../modules/development/authentication.nix
     ../modules/development/ssh.nix
     ../modules/development/nix.nix
+
+    ../configurations/host/microvm.nix
+    (import ../configurations/host/netvm.nix {
+      inherit self;
+      system = "aarch64-linux";
+    })
   ];
 }

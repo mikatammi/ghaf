@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   hardware.nvidia-jetpack = {
     enable = true;
     som = "orin-agx";
@@ -6,7 +10,31 @@
     modesetting.enable = true;
   };
 
+  # TODO: rpfilter module missing from kernel
+  networking.firewall.enable = true;
   boot.kernelPatches = [
+    {
+      name = "my-tegra-kernel-patches";
+      patch = null;
+      structuredExtraConfig = with lib.kernel; {
+        CONFIG_IP_NF_MATCH_RPFILTER = module;
+
+	CONFIG_VFIO = module;
+        CONFIG_VFIO_PCI = module;
+	CONFIG_VFIO_PLATFORM = module;
+	CONFIG_VFIO_AMBA = module;
+	CONFIG_VFIO_MDEV = module;
+	CONFIG_VFIO_MDEV_DEVICE = module;
+
+	CONFIG_VIRTIO_PCI = module;
+	CONFIG_VIRTIO_PCI_LEGACY = yes;
+	CONFIG_VIRTIO_BALLOON = module;
+	CONFIG_VIRTIO_INPUT = module;
+	CONFIG_VIRTIO_MMIO = module;
+
+	CONFIG_DRM_VIRTIO_GPU = module;
+      };
+    }
     # TODO: Remove when this patch gets merged to mainline.
     #       Patch to devicetree for getting rust-vmm based VMMs to work on
     #       NVIDIA Jetson Orin.
