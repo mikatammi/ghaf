@@ -40,6 +40,23 @@
     }
   );
 
+  packages.aarch64-linux-cross-from-x86_64-linux.nvidia-jetson-orin = nixos-generators.nixosGenerate (
+    let
+      target = import ./nvidia-jetson-orin.nix {inherit jetpack-nixos microvm;};
+    in
+      target
+      // {
+        modules =
+          target.modules
+          ++ [
+            ../modules/cross-compilation/aarch64-linux-from-x86_64-linux.nix
+          ];
+      }
+      // {
+        format = "raw-efi";
+      }
+  );
+
   # Using Orin as a default aarch64 target for now
   packages.aarch64-linux.default = self.packages.aarch64-linux.nvidia-jetson-orin;
 }
