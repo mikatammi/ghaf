@@ -1,6 +1,6 @@
 # Copyright 2022-2023 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
-{...}: {
+{lib, ...}: {
   hardware.nvidia-jetpack = {
     enable = true;
     som = "orin-agx";
@@ -23,5 +23,9 @@
 
   imports = [
     ../boot/systemd-boot-dtb.nix
+  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
   ];
 }
