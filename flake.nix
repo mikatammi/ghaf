@@ -15,7 +15,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -28,7 +28,9 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     jetpack-nixos = {
-      url = "github:anduril/jetpack-nixos";
+      url = "/home/mika/jetpack-nixos";
+      # TODO: Create a PR: An option to disable display-driver altogether
+      # url = "github:anduril/jetpack-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
