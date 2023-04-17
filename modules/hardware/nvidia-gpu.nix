@@ -19,4 +19,3 @@
     videoDrivers = ["nvidia"];
   };
 }
-

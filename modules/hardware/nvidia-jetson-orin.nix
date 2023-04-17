@@ -34,7 +34,6 @@
 
   imports = [
     ../boot/systemd-boot-dtb.nix
-    ./nvidia-gpu.nix
   ];
 
   # Passthrough Jetson Orin WiFi card

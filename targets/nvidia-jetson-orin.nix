@@ -24,15 +24,21 @@
 
           ./common-${variant}.nix
 
-          ../modules/graphics/weston.nix
+          {
+            microvm.vms."${guivm}" = {
+              flake = self;
+              autostart = true;
+            };
+          }
 
           formatModule
         ]
         ++ extraModules;
     };
     netvm = "netvm-${name}-${variant}";
+    guivm = "guivm-${name}-${variant}";
   in {
-    inherit hostConfiguration netvm;
+    inherit hostConfiguration netvm guivm;
     name = "${name}-${variant}";
     netvmConfiguration =
       (import ../microvmConfigurations/netvm {
@@ -59,6 +65,9 @@
           }
         ];
       };
+    guivmConfiguration = import ../microvmConfigurations/guivm {
+      inherit nixpkgs microvm system;
+    };
     package = hostConfiguration.config.system.build.${hostConfiguration.config.formatAttr};
   };
   nvidia-jetson-orin-debug = nvidia-jetson-orin "debug" [];
@@ -91,7 +100,8 @@
 in {
   nixosConfigurations =
     builtins.listToAttrs (map (t: nixpkgs.lib.nameValuePair t.name t.hostConfiguration) (targets ++ crossTargets))
-    // builtins.listToAttrs (map (t: nixpkgs.lib.nameValuePair t.netvm t.netvmConfiguration) targets);
+    // builtins.listToAttrs (map (t: nixpkgs.lib.nameValuePair t.netvm t.netvmConfiguration) targets)
+    // builtins.listToAttrs (map (t: nixpkgs.lib.nameValuePair t.guivm t.guivmConfiguration) targets);
 
   packages = {
     aarch64-linux =
