@@ -47,6 +47,7 @@
       .extendModules {
         modules = [
           {
+            boot.kernelParams = ["pci=nomsi"];
             microvm.devices = [
               {
                 bus = "pci";
@@ -65,9 +66,17 @@
           }
         ];
       };
-    guivmConfiguration = import ../microvmConfigurations/guivm {
-      inherit nixpkgs microvm system;
-    };
+    guivmConfiguration =
+      (import ../microvmConfigurations/guivm {
+        inherit nixpkgs microvm system;
+      })
+      .extendModules {
+        modules = [
+          {
+            boot.kernelParams = ["pci=nomsi"];
+          }
+        ];
+      };
     package = hostConfiguration.config.system.build.${hostConfiguration.config.formatAttr};
   };
   nvidia-jetson-orin-debug = nvidia-jetson-orin "debug" [];

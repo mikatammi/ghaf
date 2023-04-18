@@ -14,19 +14,34 @@ index 1be5b3f76bf8..01d3dea90cb5 100644
  dtbo-$(BUILD_ENABLE) += tegra234-p3737-overlay-pcie.dtbo
 diff --git a/nvidia/platform/t23x/concord/kernel-dts/tegra234-p3701-host-passthrough.dts b/nvidia/platform/t23x/concord/kernel-dts/tegra234-p3701-host-passthrough.dts
 new file mode 100644
-index 000000000000..e4656287da82
+index 000000000000..b6462ce71678
 --- /dev/null
 +++ b/nvidia/platform/t23x/concord/kernel-dts/tegra234-p3701-host-passthrough.dts
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,27 @@
++/*
++ * Copyright 2022-2023 TII (SSRC) and the Ghaf contributors
++ * SPDX-License-Identifier: Apache-2.0
++ */
 +/dts-v1/;
++
 +#include "tegra234-p3701-0000-p3737-0000.dts"
 +
 +/*
-+ * Update the pci-e wifi to be accessible from vfio/guest
++ * Update the pci-e "wifi" slot iommu group
++ * This is to remove the slot it self from iommu
++ * To leave the wifi card alone in its iommu group
++ * And make wifi accessible for vfio/guest
 + */
 +&pcie_c1_rp {
-+    interconnect-names = "dma-mem", "write";
 +    /delete-property/ iommus;
-+    /delete-property/ msi-parent;
-+    /delete-property/ msi-map;
++};
++
++/*
++ * Update the pci-e slot iommu group
++ * This is to remove the slot it self from iommu
++ * To leave the card on the slot alone in its iommu group
++ * Allow the accessible for vfio/guest
++ */
++&pcie_c5_rp {
++    /delete-property/ iommus;
 +};
