@@ -37,7 +37,7 @@ nixpkgs.lib.nixosSystem {
       microvm.interfaces = [
         {
           type = "tap";
-          id = "vm-netvm";
+          id = "vm-guivm";
           mac = "03:00:00:01:01:01";
         }
       ];
@@ -67,6 +67,19 @@ nixpkgs.lib.nixosSystem {
       };
 
       microvm.qemu.bios.enable = false;
+
+      microvm.devices = [
+        # GPU
+        {
+          bus = "pci";
+          path = "0005:01:00.0";
+        }
+        # HDMI audio
+        {
+          bus = "pci";
+          path = "0005:01:00.1";
+        }
+      ];
     })
   ];
 }

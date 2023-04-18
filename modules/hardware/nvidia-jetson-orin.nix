@@ -38,7 +38,7 @@
 
   # Passthrough Jetson Orin WiFi card
   boot.kernelParams = [
-    "vfio-pci.ids=10ec:c82f"
+    "vfio-pci.ids=10ec:c82f,10de:229a,10de:1fb1,10de:10fa"
     "vfio_iommu_type1.allow_unsafe_interrupts=1"
   ];
 }
