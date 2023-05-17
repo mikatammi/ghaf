@@ -18,10 +18,6 @@
 
   boot.kernelPatches = [
     {
-      name = "passthrough-patch";
-      patch = ./pci-passthrough-test.patch;
-    }
-    {
       name = "vsock-config";
       patch = null;
       extraStructuredConfig = with lib.kernel; {
@@ -39,7 +35,13 @@
 
   hardware.deviceTree = {
     enable = true;
-    name = "tegra234-p3701-host-passthrough.dtb";
+    name = "tegra234-p3701-0000-p3737-0000.dtb";
+    overlays = [
+      {
+        name = "pci-passthrough-test";
+        dtsFile = ./pci-passthrough-test.dts;
+      }
+    ];
   };
 
   imports = [

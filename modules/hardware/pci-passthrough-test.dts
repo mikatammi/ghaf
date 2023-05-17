@@ -1,0 +1,22 @@
+/dts-v1/;
+/plugin/;
+/ {
+	overlay-name = "Update the pci-e wifi to be accessible from vfio to guest";
+	// compatible = "nvidia,tegra234-pcie", "snps,dw-pcie";
+	compatible = "nvidia,p3737-0000+p3701-0000\0nvidia,tegra234\0nvidia,tegra23x";
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			pcie@14100000 {
+				/*
+				 * Update the pci-e wifi to be accessible from vfio/guest
+				 */
+				interconnect-names = "dma-mem", "write";
+				// Deleting properties does not work in overlay
+				// /delete-property/ iommus;
+				// /delete-property/ msi-parent;
+				// /delete-property/ msi-map;
+			};
+		};
+	};
+};
