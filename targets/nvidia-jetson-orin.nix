@@ -6,6 +6,7 @@
   nixos-generators,
   microvm,
   jetpack-nixos,
+  bpmp-virt,
 }: let
   name = "nvidia-jetson-orin";
   system = "aarch64-linux";
@@ -20,6 +21,8 @@
           })
 
           jetpack-nixos.nixosModules.default
+          bpmp-virt.nixosModules.bpmp-virt-host
+
           ../modules/hardware/nvidia-jetson-orin.nix
 
           ./common-${variant}.nix

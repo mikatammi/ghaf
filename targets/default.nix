@@ -9,9 +9,10 @@
   nixos-hardware,
   microvm,
   jetpack-nixos,
+  bpmp-virt,
 }:
 nixpkgs.lib.foldr nixpkgs.lib.recursiveUpdate {} [
-  (import ./nvidia-jetson-orin.nix {inherit self nixpkgs nixos-generators microvm jetpack-nixos;})
+  (import ./nvidia-jetson-orin.nix {inherit self nixpkgs nixos-generators microvm jetpack-nixos bpmp-virt;})
   (import ./vm.nix {inherit self nixpkgs nixos-generators microvm;})
   (import ./generic-x86_64.nix {inherit self nixpkgs nixos-generators microvm;})
   (import ./imx8qm-mek.nix {inherit self nixpkgs nixos-generators nixos-hardware microvm;})

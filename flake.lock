@@ -1,5 +1,29 @@
 {
   "nodes": {
+    "bpmp-virt": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1684848457,
+        "narHash": "sha256-zADYZPWeCWwI6O64uxRdFqVVCklutwi2zDkendH/QB8=",
+        "owner": "mikatammi",
+        "repo": "bpmp-virt",
+        "rev": "100a6c0f6dc2baa3f6a4eba714b5a1c649c17bde",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mikatammi",
+        "ref": "ghaf_integration",
+        "repo": "bpmp-virt",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1676283394,
@@ -127,6 +151,7 @@
     },
     "root": {
       "inputs": {
+        "bpmp-virt": "bpmp-virt",
         "flake-utils": "flake-utils",
         "jetpack-nixos": "jetpack-nixos",
         "microvm": "microvm",

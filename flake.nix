@@ -31,6 +31,11 @@
       url = "github:anduril/jetpack-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bpmp-virt = {
+      url = "github:mikatammi/bpmp-virt/ghaf_integration";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
@@ -41,6 +46,7 @@
     nixos-hardware,
     microvm,
     jetpack-nixos,
+    bpmp-virt,
   }: let
     systems = with flake-utils.lib.system; [
       x86_64-linux
@@ -61,7 +67,7 @@
       }))
 
       # Target configurations
-      (import ./targets {inherit self nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos;})
+      (import ./targets {inherit self nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos bpmp-virt;})
 
       # Hydra jobs
       (import ./hydrajobs.nix {inherit self;})
