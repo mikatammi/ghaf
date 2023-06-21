@@ -8,6 +8,8 @@
   nixos-generators,
   nixos-hardware,
   microvm,
+  vmd,
+  vmmanager,
 }: let
   name = "imx8qm-mek";
   system = "aarch64-linux";
@@ -41,6 +43,16 @@
               };
             };
           }
+
+	  vmd.nixosModules.vmd-server
+	  vmd.nixosModules.vmd-client
+	  vmmanager.nixosModules.vmmanager
+	  {
+	    services.vmd-server.enable = true;
+	    services.vmd-server.generateKeys = true;
+	    programs.vmd-client.enable = true;
+	    programs.vmmanager.enable = true;
+	  }
 
           formatModule
         ]

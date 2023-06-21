@@ -31,6 +31,19 @@
       url = "github:anduril/jetpack-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vmd = {
+      # url = "github:tiiuae/vmd";
+      url = "github:mikatammi/vmd/nixos_modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    vmmanager = {
+      # url = "github:tiiuae/vmmanager";
+      url = "github:mikatammi/vmmanager/nixos_modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.vmd.follows = "vmd";
+    };
   };
 
   outputs = {
@@ -41,6 +54,8 @@
     nixos-hardware,
     microvm,
     jetpack-nixos,
+    vmd,
+    vmmanager,
   }: let
     systems = with flake-utils.lib.system; [
       x86_64-linux
@@ -84,7 +99,7 @@
       }
 
       # Target configurations
-      (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos;})
+      (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos vmd vmmanager;})
 
       # User apps
       (import ./user-apps {inherit lib nixpkgs flake-utils;})

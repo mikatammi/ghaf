@@ -135,7 +135,60 @@
         "microvm": "microvm",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "vmd": "vmd",
+        "vmmanager": "vmmanager"
+      }
+    },
+    "vmd": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1687391820,
+        "narHash": "sha256-jW1w0zJ/0YNi2nhrPwvh7GklQXdqk8sYG6MkXuMKqJU=",
+        "owner": "mikatammi",
+        "repo": "vmd",
+        "rev": "fd6611ad2a3028c3d3b9d0f142b9f0325a4c0ab5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mikatammi",
+        "ref": "nixos_modules",
+        "repo": "vmd",
+        "type": "github"
+      }
+    },
+    "vmmanager": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "vmd": [
+          "vmd"
+        ]
+      },
+      "locked": {
+        "lastModified": 1687370275,
+        "narHash": "sha256-+Ajr7HIVREQLhQSAQnGnWoL/xm/T2MGd4nb7o5M/O2w=",
+        "owner": "mikatammi",
+        "repo": "vmmanager",
+        "rev": "f6e2e8ca8f127e9e47275492b0d6f6a8fb2a8bca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mikatammi",
+        "ref": "nixos_modules",
+        "repo": "vmmanager",
+        "type": "github"
       }
     },
     "systems": {

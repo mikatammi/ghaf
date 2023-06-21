@@ -5,6 +5,8 @@
   lib,
   nixos-generators,
   microvm,
+  vmd,
+  vmmanager,
 }: let
   name = "vm";
   system = "x86_64-linux";
@@ -39,6 +41,16 @@
               };
             };
           }
+
+	  vmd.nixosModules.vmd-server
+	  vmd.nixosModules.vmd-client
+	  vmmanager.nixosModules.vmmanager
+	  {
+	    services.vmd-server.enable = true;
+	    services.vmd-server.generateKeys = true;
+	    programs.vmd-client.enable = true;
+	    programs.vmmanager.enable = true;
+	  }
 
           formatModule
         ]
