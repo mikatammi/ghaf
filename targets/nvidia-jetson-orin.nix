@@ -65,7 +65,7 @@
             };
           }
 
-          formatModule
+          #formatModule
         ]
         ++ (import ../modules/module-list.nix)
         ++ extraModules;

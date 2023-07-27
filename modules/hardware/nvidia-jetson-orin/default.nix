@@ -5,6 +5,7 @@
 {lib, ...}:
 with lib; {
   imports = [
+    ./sdimage.nix
     ./partition-template.nix
     ../../boot/systemd-boot-dtb.nix
     ./jetson-orin.nix
