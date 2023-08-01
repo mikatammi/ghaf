@@ -73,7 +73,7 @@
   in {
     inherit hostConfiguration;
     name = "${name}-${som}-${variant}";
-    package = hostConfiguration.config.system.build.${hostConfiguration.config.formatAttr};
+    package = hostConfiguration.config.system.build.sdImage;
   };
   nvidia-jetson-orin-agx-debug = nvidia-jetson-orin "agx" "debug" [];
   nvidia-jetson-orin-agx-release = nvidia-jetson-orin "agx" "release" [];
@@ -92,7 +92,7 @@
           ../overlays/cross-compilation.nix
         ];
       };
-      package = hostConfiguration.config.system.build.${hostConfiguration.config.formatAttr};
+      package = hostConfiguration.config.system.build.sdImage;
     };
   targets = [
     nvidia-jetson-orin-agx-debug
