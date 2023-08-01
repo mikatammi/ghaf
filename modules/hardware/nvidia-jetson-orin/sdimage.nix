@@ -59,11 +59,14 @@
     populateRootCommands = ''
     '';
     postBuildCommands = ''
-      wc -c firmware_part.img > $out/esp.size
-      wc -c root-fs.img > $out/root.size
+      stat --printf=%s firmware_part.img > $out/esp.size
+      stat --printf=%s root-fs.img > $out/root.size
 
       ${pkgs.zstd}/bin/pzstd -p $NIX_BUILD_CORES -19 firmware_part.img -o $out/esp.img.zst
       ${pkgs.zstd}/bin/pzstd -p $NIX_BUILD_CORES -19 root-fs.img -o $out/root.img.zst
+
+      # Save toplevel derivation of system for debug purposes
+      ln -sf ${config.system.build.toplevel} $out/toplevel
     '';
   };
 }
