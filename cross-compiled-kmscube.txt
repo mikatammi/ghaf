@@ -1,0 +1,514 @@
+execve("/run/current-system/sw/bin/kmscube", ["kmscube"], 0xfffffc18c800 /* 45 vars */) = 0
+brk(NULL)                               = 0x36d68000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe3c0000
+faccessat(AT_FDCWD, "/etc/ld-nix.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/libdrm.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/run/opengl-driver/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libdrm.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=148512, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 264760, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe346000
+mmap(0xffffbe350000, 199224, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe350000
+munmap(0xffffbe346000, 40960)           = 0
+munmap(0xffffbe381000, 23096)           = 0
+mprotect(0xffffbe365000, 106496, PROT_NONE) = 0
+mmap(0xffffbe37f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1f000) = 0xffffbe37f000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libgbm.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libgbm.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/libgbm.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=85384, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 197088, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe31f000
+mmap(0xffffbe320000, 131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe320000
+munmap(0xffffbe31f000, 4096)            = 0
+munmap(0xffffbe341000, 57824)           = 0
+mprotect(0xffffbe32e000, 69632, PROT_NONE) = 0
+mmap(0xffffbe33f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0xffffbe33f000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libEGL.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libEGL.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/libEGL.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libEGL.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=152544, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 263392, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe2df000
+mmap(0xffffbe2e0000, 197856, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe2e0000
+munmap(0xffffbe2df000, 4096)            = 0
+munmap(0xffffbe311000, 58592)           = 0
+mprotect(0xffffbe2f4000, 110592, PROT_NONE) = 0
+mmap(0xffffbe30f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1f000) = 0xffffbe30f000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libGLESv2.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libGLESv2.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/libGLESv2.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libGLESv2.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=235912, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 327720, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe28f000
+mmap(0xffffbe290000, 262184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe290000
+munmap(0xffffbe28f000, 4096)            = 0
+munmap(0xffffbe2d1000, 57384)           = 0
+mprotect(0xffffbe2b3000, 110592, PROT_NONE) = 0
+mmap(0xffffbe2ce000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2e000) = 0xffffbe2ce000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=691896, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe3be000
+mmap(NULL, 720920, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe1df000
+mmap(0xffffbe1e0000, 655384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe1e0000
+munmap(0xffffbe1df000, 4096)            = 0
+munmap(0xffffbe281000, 57368)           = 0
+mprotect(0xffffbe262000, 118784, PROT_NONE) = 0
+mmap(0xffffbe27f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8f000) = 0xffffbe27f000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0000p\2\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=2047424, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 1826752, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe022000
+mmap(0xffffbe030000, 1761216, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbe030000
+munmap(0xffffbe022000, 57344)           = 0
+munmap(0xffffbe1de000, 8128)            = 0
+mprotect(0xffffbe1ba000, 73728, PROT_NONE) = 0
+mmap(0xffffbe1cc000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18c000) = 0xffffbe1cc000
+mmap(0xffffbe1d2000, 49088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffbe1d2000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libwayland-server.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libwayland-server.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/d08w187k0df8ajlxiib1hf4pgaglf74a-wayland-aarch64-unknown-linux-gnu-1.22.0/lib/libwayland-server.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=152856, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 263136, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdfef000
+mmap(0xffffbdff0000, 197600, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbdff0000
+munmap(0xffffbdfef000, 4096)            = 0
+munmap(0xffffbe021000, 58336)           = 0
+mprotect(0xffffbe004000, 106496, PROT_NONE) = 0
+mmap(0xffffbe01e000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0xffffbe01e000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libexpat.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=216784, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 327696, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdf9f000
+mmap(0xffffbdfa0000, 262160, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbdfa0000
+munmap(0xffffbdf9f000, 4096)            = 0
+munmap(0xffffbdfe1000, 57360)           = 0
+mprotect(0xffffbdfc4000, 106496, PROT_NONE) = 0
+mmap(0xffffbdfde000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2e000) = 0xffffbdfde000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libGLdispatch.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libGLdispatch.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=2247096, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe3bc000
+mmap(NULL, 1671856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbde07000
+mmap(0xffffbde10000, 1606320, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbde10000
+munmap(0xffffbde07000, 36864)           = 0
+munmap(0xffffbdf99000, 25264)           = 0
+mprotect(0xffffbdf66000, 57344, PROT_NONE) = 0
+mmap(0xffffbdf74000, 118784, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x164000) = 0xffffbdf74000
+mmap(0xffffbdf91000, 29360, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffbdf91000
+close(3)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libffi.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/p3da9ga53c95qpxw5p3jg422nhiiyydm-libffi-aarch64-unknown-linux-gnu-3.4.4/lib/libffi.so.8", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=76080, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 197848, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdddf000
+mmap(0xffffbdde0000, 132312, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffbdde0000
+munmap(0xffffbdddf000, 4096)            = 0
+munmap(0xffffbde01000, 58584)           = 0
+mprotect(0xffffbdde9000, 90112, PROT_NONE) = 0
+mmap(0xffffbddff000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0xffffbddff000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbe3ba000
+set_tid_address(0xffffbe3ba0f0)         = 1211
+set_robust_list(0xffffbe3ba100, 24)     = 0
+rseq(0xffffbe3ba740, 0x20, 0, 0xd428bc00) = 0
+mprotect(0xffffbe1cc000, 16384, PROT_READ) = 0
+mprotect(0xffffbddff000, 4096, PROT_READ) = 0
+mprotect(0xffffbdf74000, 114688, PROT_READ) = 0
+mprotect(0xffffbe27f000, 4096, PROT_READ) = 0
+mprotect(0xffffbdfde000, 8192, PROT_READ) = 0
+mprotect(0xffffbe01e000, 8192, PROT_READ) = 0
+mprotect(0xffffbe2ce000, 8192, PROT_READ) = 0
+mprotect(0xffffbe30f000, 4096, PROT_READ) = 0
+mprotect(0xffffbe37f000, 4096, PROT_READ) = 0
+mprotect(0xffffbe33f000, 4096, PROT_READ) = 0
+mprotect(0x57f000, 4096, PROT_READ)     = 0
+mprotect(0xffffbe3c5000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+getrandom("\x45\x28\x62\x2d\xca\xf5\xaf\x8f", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x36d68000
+brk(0x36d89000)                         = 0x36d89000
+openat(AT_FDCWD, "/dev/dri/card0", O_RDWR) = 3
+ioctl(3, DRM_IOCTL_MODE_GETRESOURCES, 0xffffc3e030e0) = 0
+ioctl(3, DRM_IOCTL_MODE_GETRESOURCES, 0xffffc3e030e0) = 0
+ioctl(3, DRM_IOCTL_MODE_GETCONNECTOR, 0xffffc3e03090) = 0
+ioctl(3, DRM_IOCTL_MODE_GETCONNECTOR, 0xffffc3e03090) = 0
+ioctl(3, DRM_IOCTL_MODE_GETENCODER, 0xffffc3e03110) = 0
+ioctl(3, DRM_IOCTL_MODE_GETENCODER, 0xffffc3e03110) = 0
+ioctl(3, DRM_IOCTL_MODE_GETENCODER, 0xffffc3e03110) = 0
+newfstatat(3, "", {st_mode=S_IFCHR|0660, st_rdev=makedev(0xe2, 0), ...}, AT_EMPTY_PATH) = 0
+ioctl(3, DRM_IOCTL_VERSION, 0x36d69090) = 0
+ioctl(3, DRM_IOCTL_VERSION, 0x36d69090) = 0
+geteuid()                               = 1000
+getuid()                                = 1000
+openat(AT_FDCWD, "/run/opengl-driver/lib/gbm/tls/nvidia-drm_gbm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/gbm/nvidia-drm_gbm.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\240\17\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=66848, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 197920, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbddaf000
+mmap(0xffffbddb0000, 132384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbddb0000
+munmap(0xffffbddaf000, 4096)            = 0
+munmap(0xffffbddd1000, 58656)           = 0
+mprotect(0xffffbddb5000, 110592, PROT_NONE) = 0
+mmap(0xffffbddc4000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x4000) = 0xffffbddc4000
+mmap(0xffffbddd0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x10000) = 0xffffbddd0000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0555, st_size=69608, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 196624, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdd7f000
+mmap(0xffffbdd80000, 131088, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdd80000
+munmap(0xffffbdd7f000, 4096)            = 0
+munmap(0xffffbdda1000, 57360)           = 0
+mprotect(0xffffbdd81000, 122880, PROT_NONE) = 0
+mmap(0xffffbdd9f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xf000) = 0xffffbdd9f000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvidia-rmapi-tegra.so.35.3.1", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\260\307\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=269984, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 401056, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdd1e000
+mmap(0xffffbdd20000, 335520, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdd20000
+munmap(0xffffbdd1e000, 8192)            = 0
+munmap(0xffffbdd72000, 56992)           = 0
+mprotect(0xffffbdd4d000, 143360, PROT_NONE) = 0
+mmap(0xffffbdd5c000, 61440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2c000) = 0xffffbdd5c000
+mmap(0xffffbdd70000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x40000) = 0xffffbdd70000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/7fl2cxmh21grnx1nwrkgmxbwyyhlr21g-libglvnd-aarch64-unknown-linux-gnu-1.6.0/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/c0afxs8f8j14bgyhid9phixlsy9l5djl-egl-wayland-aarch64-unknown-linux-gnu-1.1.11/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/c0afxs8f8j14bgyhid9phixlsy9l5djl-egl-wayland-aarch64-unknown-linux-gnu-1.1.11/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/721826522kqazzsj6178pm1a9fm1sxk0-libX11-aarch64-unknown-linux-gnu-1.8.6/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/721826522kqazzsj6178pm1a9fm1sxk0-libX11-aarch64-unknown-linux-gnu-1.8.6/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/mgnlxnxbj7hidgqy5yhgfw5q5wi66kf2-libXext-aarch64-unknown-linux-gnu-1.3.4/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/mgnlxnxbj7hidgqy5yhgfw5q5wi66kf2-libXext-aarch64-unknown-linux-gnu-1.3.4/lib", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0555, st_size=69984, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 196624, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdcef000
+mmap(0xffffbdcf0000, 131088, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdcf0000
+munmap(0xffffbdcef000, 4096)            = 0
+munmap(0xffffbdd11000, 57360)           = 0
+mprotect(0xffffbdcf1000, 122880, PROT_NONE) = 0
+mmap(0xffffbdd0f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xf000) = 0xffffbdd0f000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_gpu.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_gpu.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_gpu.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0`\343\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=403592, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 534664, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdc6d000
+mmap(0xffffbdc70000, 469128, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdc70000
+munmap(0xffffbdc6d000, 12288)           = 0
+munmap(0xffffbdce3000, 51336)           = 0
+mprotect(0xffffbdcc8000, 98304, PROT_NONE) = 0
+mmap(0xffffbdcd8000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x58000) = 0xffffbdcd8000
+mmap(0xffffbdce0000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x60000) = 0xffffbdce0000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_chip.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_chip.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_chip.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0 \r\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=66920, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 197992, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdc3f000
+mmap(0xffffbdc40000, 132456, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdc40000
+munmap(0xffffbdc3f000, 4096)            = 0
+munmap(0xffffbdc61000, 58728)           = 0
+mprotect(0xffffbdc43000, 118784, PROT_NONE) = 0
+mmap(0xffffbdc52000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2000) = 0xffffbdc52000
+mmap(0xffffbdc60000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x10000) = 0xffffbdc60000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_host1x.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_host1x.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_host1x.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\00002\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=136320, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 267392, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdbfe000
+mmap(0xffffbdc00000, 201856, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdc00000
+munmap(0xffffbdbfe000, 8192)            = 0
+munmap(0xffffbdc32000, 54400)           = 0
+mprotect(0xffffbdc10000, 131072, PROT_NONE) = 0
+mmap(0xffffbdc1f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xf000) = 0xffffbdc1f000
+mmap(0xffffbdc30000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x20000) = 0xffffbdc30000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_mem.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_mem.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_mem.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\260\37\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=69112, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 200184, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdbcf000
+mmap(0xffffbdbd0000, 134648, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdbd0000
+munmap(0xffffbdbcf000, 4096)            = 0
+munmap(0xffffbdbf1000, 60920)           = 0
+mprotect(0xffffbdbd7000, 102400, PROT_NONE) = 0
+mmap(0xffffbdbe6000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x6000) = 0xffffbdbe6000
+mmap(0xffffbdbf0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x10000) = 0xffffbdbf0000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_surface.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_surface.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_surface.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0pP\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=200152, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 331224, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdb7f000
+mmap(0xffffbdb80000, 265688, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdb80000
+munmap(0xffffbdb7f000, 4096)            = 0
+munmap(0xffffbdbc1000, 60888)           = 0
+mprotect(0xffffbdba4000, 114688, PROT_NONE) = 0
+mmap(0xffffbdbb3000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x23000) = 0xffffbdbb3000
+mmap(0xffffbdbc0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x30000) = 0xffffbdbc0000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvrm_sync.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvrm_sync.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvrm_sync.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\260\35\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=68560, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 199632, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdb4f000
+mmap(0xffffbdb50000, 134096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdb50000
+munmap(0xffffbdb4f000, 4096)            = 0
+munmap(0xffffbdb71000, 60368)           = 0
+mprotect(0xffffbdb55000, 110592, PROT_NONE) = 0
+mmap(0xffffbdb65000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x5000) = 0xffffbdb65000
+mmap(0xffffbdb70000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x10000) = 0xffffbdb70000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvos.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l71c6jjb1bl0lkycdf6wgilnr8w8fh7f-nvidia-l4t-3d-core-35.3.1-20230319081403/lib/libnvos.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvos.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0@L\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=59816, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 193336, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdb20000
+mmap(0xffffbdb20000, 127800, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdb20000
+munmap(0xffffbdb40000, 62264)           = 0
+mprotect(0xffffbdb2e000, 61440, PROT_NONE) = 0
+mmap(0xffffbdb3d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xd000) = 0xffffbdb3d000
+mmap(0xffffbdb3f000, 824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffbdb3f000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvsocsys.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvsocsys.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\340\17\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=67248, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 198320, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbdaef000
+mmap(0xffffbdaf0000, 132784, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbdaf0000
+munmap(0xffffbdaef000, 4096)            = 0
+munmap(0xffffbdb11000, 59056)           = 0
+mprotect(0xffffbdaf3000, 118784, PROT_NONE) = 0
+mmap(0xffffbdb02000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2000) = 0xffffbdb02000
+mmap(0xffffbdb10000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x10000) = 0xffffbdb10000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/3rq01n81wb6b7wfz7lj755br9akcpccd-aarch64-unknown-linux-gnu-stage-final-gcc-12.2.0-lib/aarch64-unknown-linux-gnu/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0555, st_size=2901304, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 2316256, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbd8ba000
+mmap(0xffffbd8c0000, 2250720, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbd8c0000
+munmap(0xffffbd8ba000, 24576)           = 0
+munmap(0xffffbdae6000, 38880)           = 0
+mprotect(0xffffbdac3000, 73728, PROT_NONE) = 0
+mmap(0xffffbdad5000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x205000) = 0xffffbdad5000
+mmap(0xffffbdae3000, 10208, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffbdae3000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libnvsciipc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/60vz082zyv62cfmqrg4ls9v2fw7xx3sp-nvidia-l4t-core-35.3.1-20230319081403/lib/libnvsciipc.so", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\320&\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=80144, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 213608, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbd88b000
+mmap(0xffffbd890000, 148072, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbd890000
+munmap(0xffffbd88b000, 20480)           = 0
+munmap(0xffffbd8b5000, 41576)           = 0
+mprotect(0xffffbd8a3000, 61440, PROT_NONE) = 0
+mmap(0xffffbd8b2000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x12000) = 0xffffbd8b2000
+mmap(0xffffbd8b4000, 616, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffbd8b4000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/librt.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/librt.so.1", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(4, "", {st_mode=S_IFREG|0555, st_size=70112, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 196624, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffbd85f000
+mmap(0xffffbd860000, 131088, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0xffffbd860000
+munmap(0xffffbd85f000, 4096)            = 0
+munmap(0xffffbd881000, 57360)           = 0
+mprotect(0xffffbd861000, 122880, PROT_NONE) = 0
+mmap(0xffffbd87f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xf000) = 0xffffbd87f000
+close(4)                                = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+munmap(0xffffbddb0000, 132384)          = 0
+munmap(0xffffbdd20000, 335520)          = 0
+munmap(0xffffbdc70000, 469128)          = 0
+munmap(0xffffbdb80000, 265688)          = 0
+munmap(0xffffbdb50000, 134096)          = 0
+munmap(0xffffbdc00000, 201856)          = 0
+munmap(0xffffbdbd0000, 134648)          = 0
+munmap(0xffffbdc40000, 132456)          = 0
+munmap(0xffffbdaf0000, 132784)          = 0
+munmap(0xffffbdb20000, 127800)          = 0
+munmap(0xffffbdd80000, 131088)          = 0
+munmap(0xffffbdcf0000, 131088)          = 0
+munmap(0xffffbd8c0000, 2250720)         = 0
+munmap(0xffffbd890000, 148072)          = 0
+munmap(0xffffbd860000, 131088)          = 0
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/gbm/tls/nvidia-drm_gbm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/lib/gbm/nvidia-drm_gbm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+geteuid()                               = 1000
+getuid()                                = 1000
+ioctl(3, DRM_IOCTL_VERSION, 0x36d6d5e0) = 0
+ioctl(3, DRM_IOCTL_VERSION, 0x36d6d5e0) = 0
+futex(0xffffbe3401cc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+newfstatat(4, "", {st_mode=S_IFDIR|0555, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(4, 0x36d71040 /* 4 entries */, 32768) = 144
+getdents64(4, 0x36d71040 /* 0 entries */, 32768) = 0
+close(4)                                = 0
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 4
+read(4, "<?xml version=\"1.0\" standalone=\""..., 4096) = 4096
+getrandom("\xd2\x49\xfa\x53\xc8\xea\x81\x0f", 8, 0) = 8
+read(4, " value=\"true\" />\n        </appli"..., 4096) = 4096
+read(4, "ot-directly-run-secondlife-bin\">"..., 4096) = 4096
+read(4, "tion name=\"Observer\" executable="..., 4096) = 4096
+read(4, "on name=\"force_glsl_extensions_w"..., 4096) = 4096
+read(4, "rue\"/>\n        </application>\n\n "..., 4096) = 4096
+read(4, "thread\" value=\"true\"/>\n        <"..., 4096) = 4096
+read(4, "ation name=\"Unigine Sanctuary\" e"..., 4096) = 4096
+read(4, "        <option name=\"adaptive_s"..., 4096) = 4096
+read(4, "scard\" value=\"true\" />\n        <"..., 4096) = 4096
+read(4, "ue=\"true\" />\n        </applicati"..., 4096) = 4096
+read(4, "           <option name=\"force_g"..., 4096) = 4096
+read(4, "-\n         The android game hall"..., 4096) = 2498
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+openat(AT_FDCWD, "/nix/store/l921kwv9b9axqv1309yhsix2k0g5pivr-mesa-aarch64-unknown-linux-gnu-23.0.3/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 4
+read(4, "<?xml version=\"1.0\" standalone=\""..., 4096) = 4096
+getrandom("\x5d\xfd\xff\xc5\x2b\x0f\x89\x99", 8, 0) = 8
+read(4, "\"radv_absolute_depth_bias\" value"..., 4096) = 4037
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/ghaf/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(3, "", {st_mode=S_IFCHR|0660, st_rdev=makedev(0xe2, 0), ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/sys/dev/char/226:0/device/vendor", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/sys/dev/char/226:0/device/device", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(3, "", {st_mode=S_IFCHR|0660, st_rdev=makedev(0xe2, 0), ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/sys/dev/char/226:0/device/drm", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+readlinkat(AT_FDCWD, "/sys/dev/char/226:0/device/subsystem", "../../../bus/platform", 4096) = 21
+openat(AT_FDCWD, "/dev/dri", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+newfstatat(4, "", {st_mode=S_IFDIR|0755, st_size=100, ...}, AT_EMPTY_PATH) = 0
+getdents64(4, 0x36d70030 /* 5 entries */, 32768) = 144
+newfstatat(AT_FDCWD, "/dev/dri/card0", {st_mode=S_IFCHR|0660, st_rdev=makedev(0xe2, 0), ...}, 0) = 0
+newfstatat(AT_FDCWD, "/sys/dev/char/226:0/device/drm", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+readlinkat(AT_FDCWD, "/sys/dev/char/226:0/device/subsystem", "../../../bus/platform", 4096) = 21
+openat(AT_FDCWD, "/sys/dev/char/226:0/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+openat(AT_FDCWD, "/sys/dev/char/226:0/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+openat(AT_FDCWD, "/sys/dev/char/226:0/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+newfstatat(AT_FDCWD, "/dev/dri/renderD128", {st_mode=S_IFCHR|0666, st_rdev=makedev(0xe2, 0x80), ...}, 0) = 0
+newfstatat(AT_FDCWD, "/sys/dev/char/226:128/device/drm", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+readlinkat(AT_FDCWD, "/sys/dev/char/226:128/device/subsystem", "../../../bus/platform", 4096) = 21
+openat(AT_FDCWD, "/sys/dev/char/226:128/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+openat(AT_FDCWD, "/sys/dev/char/226:128/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+openat(AT_FDCWD, "/sys/dev/char/226:128/device/uevent", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+read(5, "DRIVER=nv_platform\nOF_NAME=displ"..., 4096) = 175
+close(5)                                = 0
+getdents64(4, 0x36d70030 /* 0 entries */, 32768) = 0
+newfstatat(AT_FDCWD, "/dev/dri/card0", {st_mode=S_IFCHR|0660, st_rdev=makedev(0xe2, 0), ...}, 0) = 0
+close(4)                                = 0
+ioctl(3, DRM_IOCTL_VERSION, 0x36d69440) = 0
+ioctl(3, DRM_IOCTL_VERSION, 0x36d69440) = 0
+openat(AT_FDCWD, "/run/opengl-driver/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/d08w187k0df8ajlxiib1hf4pgaglf74a-wayland-aarch64-unknown-linux-gnu-1.22.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+geteuid()                               = 1000
+getuid()                                = 1000
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/tls/nvidia-drm_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/nvidia-drm_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+write(2, "MESA-LOADER: failed to open nvid"..., 128MESA-LOADER: failed to open nvidia-drm: /run/opengl-driver/lib/dri/nvidia-drm_dri.so: cannot open shared object file: No such fi) = 128
+write(2, "le or directory (search paths /r"..., 71le or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+) = 71
+openat(AT_FDCWD, "/run/opengl-driver/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/d08w187k0df8ajlxiib1hf4pgaglf74a-wayland-aarch64-unknown-linux-gnu-1.22.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+geteuid()                               = 1000
+getuid()                                = 1000
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/tls/zink_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/zink_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+write(2, "MESA-LOADER: failed to open zink"..., 128MESA-LOADER: failed to open zink: /run/opengl-driver/lib/dri/zink_dri.so: cannot open shared object file: No such file or direct) = 128
+write(2, "ory (search paths /run/opengl-dr"..., 59ory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+) = 59
+openat(AT_FDCWD, "/run/opengl-driver/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/d08w187k0df8ajlxiib1hf4pgaglf74a-wayland-aarch64-unknown-linux-gnu-1.22.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+geteuid()                               = 1000
+getuid()                                = 1000
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/tls/kms_swrast_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/kms_swrast_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+write(2, "MESA-LOADER: failed to open kms_"..., 128MESA-LOADER: failed to open kms_swrast: /run/opengl-driver/lib/dri/kms_swrast_dri.so: cannot open shared object file: No such fi) = 128
+write(2, "le or directory (search paths /r"..., 71le or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+) = 71
+openat(AT_FDCWD, "/run/opengl-driver/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/invw5qqh124yi97a87fz63p605vhaky0-expat-aarch64-unknown-linux-gnu-2.5.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/d08w187k0df8ajlxiib1hf4pgaglf74a-wayland-aarch64-unknown-linux-gnu-1.22.0/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/rap972m5nclh5kpnhwl6yfrz2ag0zzjv-libdrm-aarch64-unknown-linux-gnu-2.4.115/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/jm4fzh18gmwzfhin916yajmhz8i50dvg-glibc-aarch64-unknown-linux-gnu-2.37-8/lib/libglapi.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+geteuid()                               = 1000
+getuid()                                = 1000
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/tls/swrast_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/run/opengl-driver/lib/dri/swrast_dri.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+write(2, "MESA-LOADER: failed to open swra"..., 128MESA-LOADER: failed to open swrast: /run/opengl-driver/lib/dri/swrast_dri.so: cannot open shared object file: No such file or di) = 128
+write(2, "rectory (search paths /run/openg"..., 63rectory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+) = 63
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0x10} ---
++++ killed by SIGSEGV (core dumped) +++
