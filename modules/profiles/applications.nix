@@ -20,7 +20,7 @@ in
       #For now enable weston + apps
       ghaf.graphics.weston = {
         enable = true;
-        enableDemoApplications = true;
+        enableDemoApplications = false;
       };
     };
   }

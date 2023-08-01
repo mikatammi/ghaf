@@ -23,6 +23,7 @@ in {
       weston
       # Seatd is needed to manage log-in process for weston
       seatd
+      kmscube
     ];
 
     # Next 4 services/targets are taken from official weston documentation:
