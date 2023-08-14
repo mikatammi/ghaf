@@ -143,5 +143,9 @@ in
         somDefinition."${cfg.somType}".vfio-pci
         "vfio_iommu_type1.allow_unsafe_interrupts=1"
       ];
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-label/${config.sdImage.firmwarePartitionName}";
+        fsType = "vfat";
+      };
     };
   }
