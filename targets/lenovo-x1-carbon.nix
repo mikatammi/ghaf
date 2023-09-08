@@ -8,6 +8,7 @@
   nixos-generators,
   nixos-hardware,
   microvm,
+  lanzaboote,
 }: let
   name = "lenovo-x1-carbon-gen11";
   system = "x86_64-linux";
