@@ -32,6 +32,40 @@
         };
       }
     ];
+    guivmExtraModules = [
+      {
+        microvm.qemu.extraArgs = [
+          # "-device"
+          # "virtio-input-host-pci,evdev=/dev/mouse"
+          # "-device"
+          # "virtio-input-host-pci,evdev=/dev/touchpad"
+        ];
+        microvm.devices = [
+          {
+            bus = "pci";
+            path = "0000:00:02.0";
+          }
+        ];
+      }
+      ({pkgs, ...}: {
+        ghaf.graphics.weston.launchers = [
+          {
+            path = "${pkgs.waypipe}/bin/waypipe ssh -i ${pkgs.waypipe-ssh}/keys/waypipe-ssh -o StrictHostKeyChecking=no 192.168.101.5 chromium --enable-features=UseOzonePlatform --ozone-platform=wayland";
+            icon = "${pkgs.weston}/share/weston/icon_editor.png";
+          }
+
+          {
+            path = "${pkgs.waypipe}/bin/waypipe ssh -i ${pkgs.waypipe-ssh}/keys/waypipe-ssh -o StrictHostKeyChecking=no 192.168.101.6 gala --enable-features=UseOzonePlatform --ozone-platform=wayland";
+            icon = "${pkgs.weston}/share/weston/icon_editor.png";
+          }
+
+          {
+            path = "${pkgs.waypipe}/bin/waypipe ssh -i ${pkgs.waypipe-ssh}/keys/waypipe-ssh -o StrictHostKeyChecking=no 192.168.101.7 zathura";
+            icon = "${pkgs.weston}/share/weston/icon_editor.png";
+          }
+        ];
+      })
+    ];
     hostConfiguration = lib.nixosSystem {
       inherit system;
       specialArgs = {inherit lib;};
@@ -41,7 +75,13 @@
           ../modules/host
           ../modules/virtualization/microvm/microvm-host.nix
           ../modules/virtualization/microvm/netvm.nix
-          {
+          ../modules/virtualization/microvm/guivm.nix
+          ../modules/virtualization/microvm/appvm.nix
+          ({
+            pkgs,
+            lib,
+            ...
+          }: {
             ghaf = {
               hardware.x86_64.common.enable = true;
 
@@ -51,17 +91,53 @@
                 enable = true;
                 extraModules = netvmExtraModules;
               };
+              virtualization.microvm.guivm = {
+                enable = true;
+                extraModules = guivmExtraModules;
+              };
+              virtualization.microvm.appvm = {
+                enable = true;
+                vms = [
+                  {
+                    name = "chromium";
+                    packages = [pkgs.chromium];
+                    ipAddress = "192.168.101.5/24";
+                    macAddress = "02:00:00:03:05:01";
+                    ramMb = 3072;
+                    cores = 4;
+                  }
+                  {
+                    name = "gala";
+                    packages = [pkgs.gala-app];
+                    ipAddress = "192.168.101.6/24";
+                    macAddress = "02:00:00:03:06:01";
+                    ramMb = 1536;
+                    cores = 2;
+                  }
+                  {
+                    name = "zathura";
+                    packages = [pkgs.zathura];
+                    ipAddress = "192.168.101.7/24";
+                    macAddress = "02:00:00:03:07:01";
+                    ramMb = 512;
+                    cores = 1;
+                  }
+                ];
+                extraModules = [
+                  ../overlays/custom-packages.nix
+                ];
+              };
 
               # Enable all the default UI applications
               profiles = {
-                applications.enable = true;
+                applications.enable = false;
                 #TODO clean this up when the microvm is updated to latest
                 release.enable = variant == "release";
                 debug.enable = variant == "debug";
               };
-              windows-launcher.enable = true;
+              windows-launcher.enable = false;
             };
-          }
+          })
 
           formatModule
 
