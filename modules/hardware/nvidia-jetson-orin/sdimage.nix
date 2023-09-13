@@ -35,7 +35,6 @@
 
       devicetree /EFI/nixos/${config.hardware.deviceTree.name}
     '';
-    randomSeed = ./random-seed;
   in {
     firmwareSize = 256;
     # TODO: Replace contents of the populateFirmwareCommands with proper
@@ -50,7 +49,6 @@
       mkdir -pv firmware/loader/entries
       cp -v ${loaderConf} firmware/loader/loader.conf
       cp -v ${entriesSrel} firmware/loader/entries.srel
-      cp -v ${randomSeed} firmware/loader/random-seed
       cp -v ${entry} firmware/loader/entries/nixos-generation-1.conf
 
       mkdir -pv firmware/EFI/nixos
