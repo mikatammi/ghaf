@@ -29,18 +29,13 @@
         $out
     '';
     fdtPath = "${config.hardware.deviceTree.package}/${config.hardware.deviceTree.name}";
-    machine-id = "0123456789abcdef0123456789abcdef";
   in {
     firmwareSize = 256;
     # TODO: Replace contents of the populateFirmwareCommands with proper
     #       bootpsec-based ESP partition generation.
     populateFirmwareCommands = ''
       mkdir -pv firmware
-      ${mkESPContent} \
-        --toplevel ${config.system.build.toplevel} \
-        --output firmware/ \
-        --device-tree ${fdtPath} \
-        --machine-id ${machine-id}
+      ${mkESPContent} --toplevel ${config.system.build.toplevel} --output firmware/ --device-tree ${fdtPath}
     '';
     populateRootCommands = ''
     '';
