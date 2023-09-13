@@ -61,10 +61,11 @@
     populateRootCommands = ''
     '';
     postBuildCommands = ''
-      cp firmware_part.img $out/esp.img
-      cp root-fs.img $out/root.img
       wc -c firmware_part.img > $out/esp.size
       wc -c root-fs.img > $out/root.size
+
+      ${pkgs.zstd}/bin/pzstd -p $NIX_BUILD_CORES -19 firmware_part.img -o $out/esp.img.zst
+      ${pkgs.zstd}/bin/pzstd -p $NIX_BUILD_CORES -19 root-fs.img -o $out/root.img.zst
     '';
   };
 }
