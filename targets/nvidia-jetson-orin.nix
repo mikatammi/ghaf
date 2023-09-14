@@ -65,6 +65,35 @@
             };
           }
 
+          (
+            {
+              pkgs,
+              config,
+              ...
+            }: let
+              inherit (jetpack-nixos.legacyPackages.${config.nixpkgs.buildPlatform.system}) bspSrc l4tVersion;
+              inherit
+                (pkgs.callPackages (jetpack-nixos + "/optee.nix") {
+                  stdenv = pkgs.gcc9Stdenv;
+                  inherit bspSrc l4tVersion;
+                })
+                opteeClient
+                ;
+              # TODO: Fill the buildPkcs11 stuff here (i.e. copy paste from somewhere else)
+              # pcks11Ta = ...
+            in {
+              hardware.nvidia-jetpack.firmware.optee.clientLoadPath = pkgs.linkFarm "optee-load-path" [
+                # TODO: Uncomment this
+                # {
+                #   # TODO: Figure out what filename the tee_supplicant expects to find
+                #   name = "optee_armtz/my.ta";
+                #   # TODO: Maybe exact path to the TA file
+                #   path = pkcs11Ta;
+                # }
+              ];
+            }
+          )
+
           #formatModule
         ]
         ++ (import ../modules/module-list.nix)
