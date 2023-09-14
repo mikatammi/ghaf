@@ -25,15 +25,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1693193148,
-        "narHash": "sha256-/GUh0y6vvMVOeSC/v0ydfch9ynuJxLf0aPucidAgFKY=",
-        "owner": "anduril",
+        "lastModified": 1694690575,
+        "narHash": "sha256-cDSn5kl6sv5T6wc67niHFTUMWLo1B1tgCDuTqWd6DiM=",
+        "owner": "mikatammi",
         "repo": "jetpack-nixos",
-        "rev": "57b79aba8d4608839f9777a775bfcb1354d88f21",
+        "rev": "0aeadd17834c74c5c2d5998d48a04a674b42ef63",
         "type": "github"
       },
       "original": {
-        "owner": "anduril",
+        "owner": "mikatammi",
+        "ref": "optee-load-path",
         "repo": "jetpack-nixos",
         "type": "github"
       }

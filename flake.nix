@@ -28,7 +28,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     jetpack-nixos = {
-      url = "github:anduril/jetpack-nixos";
+      url = "github:mikatammi/jetpack-nixos/optee-load-path";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
