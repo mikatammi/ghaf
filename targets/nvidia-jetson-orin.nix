@@ -115,7 +115,7 @@
                 ];
                 installPhase = ''
                   runHook preInstall
-                  install -Dm755 -t $out out/*.stripped.elf
+                  install -Dm755 -t $out out/fd02c9da-306c-48c7-a49c-bbd827ae86ee.ta
                   runHook postInstall
                 '';
               };
@@ -125,7 +125,7 @@
                   # TODO: Figure out what filename the tee_supplicant expects to find
                   name = "optee_armtz/fd02c9da-306c-48c7-a49c-bbd827ae86ee.ta";
                   # TODO: Maybe exact path to the TA file
-                  path = "${pcks11Ta}/fd02c9da-306c-48c7-a49c-bbd827ae86ee.stripped.elf";
+                  path = "${pcks11Ta}/fd02c9da-306c-48c7-a49c-bbd827ae86ee.ta";
                 }
               ];
             }
