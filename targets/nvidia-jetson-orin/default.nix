@@ -7,6 +7,7 @@
   nixos-generators,
   microvm,
   jetpack-nixos,
+  ocaml-overlay,
 }: let
   name = "nvidia-jetson-orin";
   system = "aarch64-linux";
@@ -108,9 +109,25 @@
       name = tgt.name + "-from-x86_64";
       hostConfiguration = tgt.hostConfiguration.extendModules {
         modules = [
-          {
+          ({pkgs, ...}: {
             nixpkgs.buildPlatform.system = "x86_64-linux";
-          }
+
+            ghaf.services.caml-crush.package = let
+              pkgsCross =
+                (import nixpkgs {
+                  inherit (pkgs.buildPlatform) system;
+                  overlays = [
+                    ocaml-overlay.overlays.default
+                  ];
+                })
+                .pkgsCross
+                .aarch64-multiplatform;
+            in
+              pkgsCross.callPackage ../../user-apps/caml-crush {
+                coccinelle = pkgs.buildPackages.coccinelle;
+                camlp4 = pkgs.buildPackages.ocamlPackages.camlp4;
+              };
+          })
 
           ../../overlays/cross-compilation
         ];

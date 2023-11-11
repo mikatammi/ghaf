@@ -5,6 +5,7 @@
   fetchFromGitHub,
   ocamlPackages,
   coccinelle,
+  camlp4,
   autoreconfHook,
   libtirpc,
   rpcsvc-proto,
@@ -15,7 +16,6 @@
     ocaml
     findlib
     camlidl
-    camlp4
     config-file
     ;
   ocamlnet = ocamlPackages.ocamlnet.overrideAttrs (old: {

@@ -10,9 +10,10 @@
   nixos-hardware,
   microvm,
   jetpack-nixos,
+  ocaml-overlay,
 }:
 lib.foldr lib.recursiveUpdate {} [
-  (import ./nvidia-jetson-orin {inherit self lib nixpkgs nixos-generators microvm jetpack-nixos;})
+  (import ./nvidia-jetson-orin {inherit self lib nixpkgs nixos-generators microvm jetpack-nixos ocaml-overlay;})
   (import ./vm.nix {inherit self lib nixos-generators microvm;})
   (import ./generic-x86_64.nix {inherit self lib nixos-generators nixos-hardware microvm;})
   (import ./lenovo-x1-carbon.nix {inherit self lib nixos-generators nixos-hardware microvm;})

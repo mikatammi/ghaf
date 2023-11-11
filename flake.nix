@@ -31,6 +31,10 @@
       url = "github:anduril/jetpack-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ocaml-overlay = {
+      url = "github:nix-ocaml/nix-overlays";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -41,6 +45,7 @@
     nixos-hardware,
     microvm,
     jetpack-nixos,
+    ocaml-overlay,
   }: let
     systems = with flake-utils.lib.system; [
       x86_64-linux
@@ -116,7 +121,7 @@
       }
 
       # Target configurations
-      (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos;})
+      (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos ocaml-overlay;})
 
       # User apps
       (import ./user-apps {inherit lib nixpkgs flake-utils;})
