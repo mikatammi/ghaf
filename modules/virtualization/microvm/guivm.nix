@@ -18,6 +18,12 @@
         pkgs,
         ...
       }: {
+        systemd.network.networks."10-${vmName}" = {
+          DHCP = lib.mkForce "no";
+          addresses = [
+            {addressConfig.Address = "192.168.101.3/24";}
+          ];
+        };
         ghaf = {
           users.accounts.enable = lib.mkDefault configHost.ghaf.users.accounts.enable;
           profiles.graphics.enable = true;

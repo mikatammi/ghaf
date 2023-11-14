@@ -32,12 +32,31 @@
         };
       }
     ];
+    xeKernelModule = {pkgs, ...}: {
+      boot.blacklistedKernelModules = [
+        "i915"
+      ];
+      hardware.enableRedistributableFirmware = true;
+      boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_6.override {
+        argsOverride = {
+          src = pkgs.fetchgit {
+            url = "https://gitlab.freedesktop.org/drm/xe/kernel.git";
+            hash = "sha256-awOxvdqpRh0holhmU3G/O2VNelhIkZ9JJypgy+jea64=";
+            rev = "edeb8b8fa330a62d4a07b37d08145d86114bc151";
+          };
+          version = "6.6.0-rc3";
+          modDirVersion = "6.6.0-rc3";
+        };
+      });
+    };
     guivmConfig = hostConfiguration.config.ghaf.virtualization.microvm.guivm;
     winConfig = hostConfiguration.config.ghaf.windows-launcher;
     guivmExtraModules = [
+      xeKernelModule
       {
         # Early KMS needed for GNOME to work inside GuiVM
-        boot.initrd.kernelModules = ["i915"];
+        # boot.initrd.kernelModules = ["i915"];
+        boot.initrd.kernelModules = ["xe"];
 
         microvm.qemu.extraArgs = [
           # Lenovo X1 touchpad and keyboard
@@ -54,8 +73,8 @@
           "-device"
           "button"
           # Lenovo X1 battery
-          "-device"
-          "battery"
+          # "-device"
+          # "battery"
           # Lenovo X1 AC adapter
           "-device"
           "acad"
@@ -102,6 +121,7 @@
           ../modules/virtualization/microvm/netvm.nix
           ../modules/virtualization/microvm/guivm.nix
           ../modules/virtualization/microvm/appvm.nix
+          xeKernelModule
           ({
             pkgs,
             lib,
