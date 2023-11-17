@@ -1,7 +1,17 @@
 # Copyright 2022-2023 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
-{
-  perSystem = {pkgs, ...}: {
+{inputs, ...}: {
+  imports = with inputs; [
+    flake-root.flakeModule
+    # TODO this import needs to be filtered to remove RISCV
+    # pre-commit-hooks-nix.flakeModule
+  ];
+  perSystem = {pkgs, ...}:
+  # TODO clean up
+  # let
+  #inherit (lib.flakes) platformPkgs;
+  #in {
+  {
     devShells.kernel = pkgs.mkShell {
       packages = with pkgs; [
         ncurses
@@ -43,6 +53,9 @@
         reuse
         alejandra
       ];
+
+      # TODO Add pre-commit.devShell (needs to exclude RiscV)
+      # https://flake.parts/options/pre-commit-hooks-nix
     };
   };
 }

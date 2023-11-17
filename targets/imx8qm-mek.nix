@@ -3,7 +3,6 @@
 #
 # i.MX8QuadMax Multisensory Enablement Kit
 {
-  self,
   lib,
   nixos-generators,
   nixos-hardware,

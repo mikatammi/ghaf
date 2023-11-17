@@ -3,10 +3,8 @@
 #
 # Generic x86_64 computer -target
 {
-  self,
   lib,
   nixos-generators,
-  nixos-hardware,
   microvm,
 }: let
   name = "generic-x86_64";

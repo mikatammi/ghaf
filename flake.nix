@@ -27,11 +27,22 @@
     }
     flake-root.url = "github:srid/flake-root";
 
+    lib-extras = {
+      url = "github:aldoborrero/lib-extras/v0.2.2";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.flake-root.follows = "flake-root";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.treefmt-nix.follows = "treefmt-nix";
+    };
+
     # Format all the things
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # To ensure that checks are run locally to enforce cleanliness
+    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
 
     # For preserving compatibility with non-Flake users
     flake-compat = {
@@ -39,6 +50,7 @@
       flake = false;
     };
 
+    #TODO Delete this
     flake-utils.url = "github:numtide/flake-utils";
 
     #
@@ -74,14 +86,6 @@
         flake-utils.follows = "flake-utils";
         flake-parts.follows = "flake-parts";
       };
-    };
-
-    lib-extras = {
-      url = "github:aldoborrero/lib-extras/v0.2.2";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-root.follows = "flake-root";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.treefmt-nix.follows = "treefmt-nix";
     };
   };
 

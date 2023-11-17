@@ -3,7 +3,6 @@
 #
 # Polarfire Enablement Kit
 {
-  self,
   lib,
   nixpkgs,
   nixos-hardware,
