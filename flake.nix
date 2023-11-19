@@ -116,7 +116,9 @@
 
       flake.nixosModules = with lib;
         mapAttrs (_: import)
-        (rakeLeaves ./modules);
+        (flattenTree (rakeLeaves ./modules));
+
+      flake.lib = lib;
     };
 }
 # : let
