@@ -121,37 +121,9 @@
       flake.lib = lib;
     };
 }
-# : let
-#
-# in
-#   # Combine list of attribute sets together
-#   lib.foldr lib.recursiveUpdate {} [
-#     # Documentation
-#     (flake-utils.lib.eachSystem systems (system: let
-#       pkgs = nixpkgs.legacyPackages.${system};
-#     in {
-#       packages.doc = pkgs.callPackage ./docs {
-#         revision = lib.version;
-#         options = let
-#           cfg = nixpkgs.lib.nixosSystem {
-#             inherit system;
-#             modules =
-#               lib.ghaf.modules
-#               ++ [
-#                 jetpack-nixos.nixosModules.default
-#                 microvm.nixosModules.host
-#                 lanzaboote.nixosModules.lanzaboote
-#               ];
-#           };
-#         in
-#           cfg.options;
-#       };
-#     }))
 #
 #     # Target configurations
 #     (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos lanzaboote;})
-#     # User apps
-#     (import ./user-apps {inherit lib nixpkgs flake-utils;})
 #     # Hydra jobs
 #     (import ./hydrajobs.nix {inherit self lib;})
 #     #templates

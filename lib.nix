@@ -6,12 +6,17 @@
 # https://github.com/divnix/digga
 {inputs, ...}: let
   inherit (inputs) nixpkgs;
+  # TODO REPLACE ME with hash pointed to by /run/current-system in built image
+  ghaf-version = nixpkgs.lib.strings.fileContents ./.version;
 in
   nixpkgs.lib.extend (lib: _:
     # some flake helpers
       (inputs.lib-extras.lib lib)
       # some utils for importing trees
       // rec {
+        # Ghaf versioning info
+        inherit ghaf-version;
+
         flattenTree =
           /*
           *

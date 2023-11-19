@@ -52,6 +52,7 @@
         nixos-rebuild
         reuse
         alejandra
+        mdbook
       ];
 
       # TODO Add pre-commit.devShell (needs to exclude RiscV)
