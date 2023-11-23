@@ -125,6 +125,7 @@
         ./packages
         ./targets
         ./hydrajobs.nix
+        ./templates
       ];
 
       #TODO Fix this
@@ -135,12 +136,3 @@
       flake.lib = lib;
     };
 }
-#
-#     # Target configurations
-#     (import ./targets {inherit self lib nixpkgs nixos-generators nixos-hardware microvm jetpack-nixos lanzaboote;})
-#     # Hydra jobs
-#     (import ./hydrajobs.nix {inherit self lib;})
-#     #templates
-#     (import ./templates)
-#   ];
-

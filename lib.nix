@@ -14,7 +14,9 @@ in
       (inputs.lib-extras.lib lib)
       # some utils for importing trees
       // rec {
+        #
         # Ghaf versioning info
+        #
         inherit ghaf-version;
 
         flattenTree =
