@@ -23,12 +23,13 @@
     # Allows us to structure the flake with the NixOS module system
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-                    inputs.nixpkgs-lib.follows = "nixpkgs";
-    }
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     flake-root.url = "github:srid/flake-root";
 
     lib-extras = {
-      url = "github:aldoborrero/lib-extras/v0.2.2";
+      url = "github:aldoborrero/lib-extras";
       inputs.flake-parts.follows = "flake-parts";
       inputs.flake-root.follows = "flake-root";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +43,15 @@
     };
 
     # To ensure that checks are run locally to enforce cleanliness
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+    pre-commit-hooks-nix = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+        flake-compat.follows = "flake-compat";
+      };
+    };
 
     # For preserving compatibility with non-Flake users
     flake-compat = {
@@ -85,6 +94,8 @@
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
         flake-parts.follows = "flake-parts";
+        pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
+        flake-compat.follows = "flake-compat";
       };
     };
   };
