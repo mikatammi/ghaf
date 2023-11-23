@@ -66,9 +66,9 @@
     (microchip-icicle-kit "release" [])
   ];
 in {
-  nixosConfigurations =
+  flake.nixosConfigurations =
     builtins.listToAttrs (map (t: lib.nameValuePair t.name t.hostConfiguration) targets);
-  packages = {
+  flake.packages = {
     riscv64-linux =
       builtins.listToAttrs (map (t: lib.nameValuePair t.name t.package) targets);
   };

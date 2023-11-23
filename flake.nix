@@ -123,11 +123,13 @@
       imports = [
         ./nix
         ./packages
+        ./targets
       ];
 
-      flake.nixosModules = with lib;
-        mapAttrs (_: import)
-        (flattenTree (rakeLeaves ./modules));
+      #TODO Fix this
+      #flake.nixosModules = with lib;
+      #  mapAttrs (_: import)
+      #  (flattenTree (rakeLeaves ./modules));
 
       flake.lib = lib;
     };

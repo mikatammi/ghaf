@@ -155,10 +155,10 @@
       inherit flash-tools-system;
     };
 in {
-  nixosConfigurations =
+  flake.nixosConfigurations =
     builtins.listToAttrs (map (t: lib.nameValuePair t.name t.hostConfiguration) (targets ++ crossTargets));
 
-  packages = {
+  flake.packages = {
     aarch64-linux =
       builtins.listToAttrs (map (t: lib.nameValuePair t.name t.package) targets)
       # EXPERIMENTAL: The aarch64-linux hosted flashing support is experimental

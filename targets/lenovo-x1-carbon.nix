@@ -7,6 +7,7 @@
   nixos-generators,
   microvm,
   lanzaboote,
+  ...
 }: let
   name = "lenovo-x1-carbon-gen11";
   system = "x86_64-linux";
@@ -343,9 +344,9 @@
     (lenovo-x1 "gnome-release" (gnomeModules ++ releaseModules))
   ];
 in {
-  nixosConfigurations =
+  flake.nixosConfigurations =
     builtins.listToAttrs (map (t: lib.nameValuePair t.name t.hostConfiguration) targets);
-  packages = {
+  flake.packages = {
     x86_64-linux =
       builtins.listToAttrs (map (t: lib.nameValuePair t.name t.package) targets);
   };

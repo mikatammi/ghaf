@@ -46,6 +46,8 @@
     };
 
     devShells.default = pkgs.mkShell {
+      name = "Ghaf devshell";
+      #TODO look at adding Mission control etc here
       packages = with pkgs; [
         git
         nix
@@ -53,6 +55,8 @@
         reuse
         alejandra
         mdbook
+        #TODO enable cachix (filter out from RISCV)
+        #cachix
       ];
 
       # TODO Add pre-commit.devShell (needs to exclude RiscV)
