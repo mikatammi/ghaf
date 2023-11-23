@@ -124,6 +124,7 @@
         ./nix
         ./packages
         ./targets
+        ./hydrajobs.nix
       ];
 
       #TODO Fix this
