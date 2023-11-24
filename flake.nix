@@ -102,7 +102,7 @@
     nix-fast-build = {
       url = "github:Mic92/nix-fast-build";
       inputs = {
-        treefmit-nix.follows = "treefmt-nix";
+        treefmt-nix.follows = "treefmt-nix";
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
