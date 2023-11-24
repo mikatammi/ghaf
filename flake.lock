@@ -253,6 +253,30 @@
         "type": "github"
       }
     },
+    "nix-fast-build": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1700146408,
+        "narHash": "sha256-T9hcGGGQv1Br9sm7oaEMs2OCDEBro5IU2i/dpTKSrQ4=",
+        "owner": "Mic92",
+        "repo": "nix-fast-build",
+        "rev": "96805cafb2bc678ce15eda386989f9e79b28868b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-fast-build",
+        "type": "github"
+      }
+    },
     "nixlib": {
       "locked": {
         "lastModified": 1693701915,
@@ -360,11 +384,12 @@
         "lanzaboote": "lanzaboote",
         "lib-extras": "lib-extras",
         "microvm": "microvm",
+        "nix-fast-build": "nix-fast-build",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "pre-commit-hooks-nix": "pre-commit-hooks-nix",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix_2"
       }
     },
     "rust-overlay": {
@@ -423,6 +448,27 @@
       }
     },
     "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-fast-build",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1698438538,
+        "narHash": "sha256-AWxaKTDL3MtxaVTVU5lYBvSnlspOS0Fjt8GxBgnU0Do=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "5deb8dc125a9f83b65ca86cf0c8167c46593e0b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"

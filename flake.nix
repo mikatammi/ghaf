@@ -98,6 +98,15 @@
         flake-compat.follows = "flake-compat";
       };
     };
+
+    nix-fast-build = {
+      url = "github:Mic92/nix-fast-build";
+      inputs = {
+        treefmit-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}: let
