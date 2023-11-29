@@ -73,5 +73,22 @@
         '';
       };
     };
+
+    virtioInputHostEvdevs = mkOption {
+      description = ''
+        List of input device files to passthrough to GuiVM using
+        "-device virtio-input-host-pci,evdev=" QEMU command line argument.
+      '';
+      type = types.listof type.str;
+      default = [];
+      example = literalExpression ''
+        [
+          "evdev=/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+          "evdev=/dev/mouse"
+          "evdev=/dev/touchpad"
+          "evdev=/dev/input/by-path/platform-i8042-serio-1-event-mouse"
+        ]
+      '';
+    };
   };
 }
