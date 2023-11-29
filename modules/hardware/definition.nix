@@ -1,4 +1,11 @@
-_: {
+# Copyright 2022-2023 TII (SSRC) and the Ghaf contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# Module for Hardware Definitions
+#
+# The point of this module is to only store information about the hardware
+# configuration, and the logic that uses this information should be elsewhere.
+{lib, ...}: {
   options.ghaf.hardware.definition = with lib; let
     pciDevSubmodule = types.submodule {
       path = mkOption {
