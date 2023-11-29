@@ -12,16 +12,29 @@
   name = "lenovo-x1-carbon-gen11";
   system = "x86_64-linux";
   formatModule = nixos-generators.nixosModules.raw-efi;
+  hwDefinition = {
+    name = "Lenovo X1 Carbon";
+    network.pciDevices = [
+      # Passthrough Intel WiFi card 8086:51f1
+      {
+        path = "0000:00:14.3";
+        vendorId = "8086";
+        productId = "51f1";
+      }
+    ];
+    gpu.pciDevices = [
+      # Passthrough Intel Iris GPU 8086:a7a1
+      {
+        path = "0000:00:02.0";
+        vendorId = "8086";
+        productId = "a7a1";
+      }
+    ];
+  };
   lenovo-x1 = variant: extraModules: let
     netvmExtraModules = [
       ({pkgs, ...}: {
         microvm = {
-          devices = lib.mkForce [
-            {
-              bus = "pci";
-              path = "0000:00:14.3";
-            }
-          ];
           shares = [
             {
               tag = "waypipe-ssh-public-key";
@@ -114,12 +127,6 @@
           "-device"
           "acad"
         ];
-        microvm.devices = [
-          {
-            bus = "pci";
-            path = "0000:00:02.0";
-          }
-        ];
       }
       ({pkgs, ...}: {
         ghaf.graphics.weston.launchers = [
@@ -162,7 +169,11 @@
           ../modules/virtualization/microvm/netvm.nix
           ../modules/virtualization/microvm/guivm.nix
           ../modules/virtualization/microvm/appvm.nix
-          ({pkgs, ...}: {
+          ({
+            pkgs,
+            config,
+            ...
+          }: {
             services.udev.extraRules = ''
               # Laptop keyboard
               SUBSYSTEM=="input",ATTRS{name}=="AT Translated Set 2 keyboard",GROUP="kvm"
@@ -193,6 +204,7 @@
             users.extraUsers.microvm.extraGroups = ["audio" "pulse-access"];
 
             ghaf = {
+              hardware.definition = hwDefinition;
               host.kernel_hardening.enable = false;
 
               hardware.x86_64.common.enable = true;
@@ -201,11 +213,37 @@
               host.networking.enable = true;
               virtualization.microvm.netvm = {
                 enable = true;
-                extraModules = netvmExtraModules;
+                extraModules = let
+                  configH = config;
+                  netvmPCIPassthroughModule = {
+                    microvm.devices = lib.mkForce (
+                      builtins.map (d: {
+                        bus = "pci";
+                        inherit (d) path;
+                      })
+                      configH.ghaf.hardware.definition.network.pciDevices
+                    );
+                  };
+                in
+                  [netvmPCIPassthroughModule]
+                  ++ netvmExtraModules;
               };
               virtualization.microvm.guivm = {
                 enable = true;
-                extraModules = guivmExtraModules;
+                extraModules = let
+                  configH = config;
+                  guivmPCIPassthroughModule = {
+                    microvm.devices = lib.mkForce (
+                      builtins.map (d: {
+                        bus = "pci";
+                        inherit (d) path;
+                      })
+                      configH.ghaf.hardware.definition.gpu.pciDevices
+                    );
+                  };
+                in
+                  [guivmPCIPassthroughModule]
+                  ++ guivmExtraModules;
               };
               virtualization.microvm.appvm = {
                 enable = true;
@@ -298,19 +336,24 @@
           # SEE: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
           # nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
 
-          {
-            boot.kernelParams = [
+          ({config, ...}: {
+            boot.kernelParams = let
+              filterDevices = builtins.filter (d: d.vendorId != null && d.productId != null);
+              mapPciIdsToString = builtins.map (d: "${d.vendorId}:${d.productId}");
+              vfioPciIds = mapPciIdsToString (filterDevices (
+                config.ghaf.hardware.definition.network.pciDevices
+                ++ config.ghaf.hardware.definition.gpu.pciDevices
+              ));
+            in [
               "intel_iommu=on,igx_off,sm_on"
               "iommu=pt"
               # Prevent i915 module from being accidentally used by host
               "module_blacklist=i915"
 
-              # Passthrough Intel WiFi card 8086:51f1
-              # Passthrough Intel Iris GPU 8086:a7a1
-              "vfio-pci.ids=8086:51f1,8086:a7a1"
+              "vfio-pci.ids=${builtins.concatStringsSep "," vfioPciIds}"
             ];
             boot.initrd.availableKernelModules = ["nvme"];
-          }
+          })
         ]
         ++ (import ../modules/module-list.nix)
         ++ extraModules;
