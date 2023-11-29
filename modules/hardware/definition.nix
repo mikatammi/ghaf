@@ -8,25 +8,27 @@
 {lib, ...}: {
   options.ghaf.hardware.definition = with lib; let
     pciDevSubmodule = types.submodule {
-      path = mkOption {
-        type = str;
-        description = ''
-          PCI device path
-        '';
-      };
-      vendorId = mkOption {
-        type = nullOr str;
-        default = null;
-        description = ''
-          PCI Vendor ID (optional)
-        '';
-      };
-      productId = mkOption {
-        type = nullOr str;
-        default = null;
-        description = ''
-          PCI Product ID (optional)
-        '';
+      options = {
+        path = mkOption {
+          type = types.str;
+          description = ''
+            PCI device path
+          '';
+        };
+        vendorId = mkOption {
+          type = types.nullOr types.str;
+          default = null;
+          description = ''
+            PCI Vendor ID (optional)
+          '';
+        };
+        productId = mkOption {
+          type = types.nullOr types.str;
+          default = null;
+          description = ''
+            PCI Product ID (optional)
+          '';
+        };
       };
     };
   in {
