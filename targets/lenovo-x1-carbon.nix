@@ -30,6 +30,14 @@
         productId = "a7a1";
       }
     ];
+    virtioInputHostEvdevs = [
+      # Lenovo X1 touchpad and keyboard
+      "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+      "/dev/mouse"
+      "/dev/touchpad"
+      # Lenovo X1 trackpoint (red button/joystick)
+      "/dev/input/by-path/platform-i8042-serio-1-event-mouse"
+    ];
   };
   lenovo-x1 = variant: extraModules: let
     netvmExtraModules = [
@@ -107,16 +115,6 @@
         boot.initrd.kernelModules = ["i915"];
 
         microvm.qemu.extraArgs = [
-          # Lenovo X1 touchpad and keyboard
-          "-device"
-          "virtio-input-host-pci,evdev=/dev/input/by-path/platform-i8042-serio-0-event-kbd"
-          "-device"
-          "virtio-input-host-pci,evdev=/dev/mouse"
-          "-device"
-          "virtio-input-host-pci,evdev=/dev/touchpad"
-          # Lenovo X1 trackpoint (red button/joystick)
-          "-device"
-          "virtio-input-host-pci,evdev=/dev/input/by-path/platform-i8042-serio-1-event-mouse"
           # Lenovo X1 Lid button
           "-device"
           "button"
@@ -241,8 +239,19 @@
                       configH.ghaf.hardware.definition.gpu.pciDevices
                     );
                   };
+                  guivmVirtioInputHostEvdevModule = {
+                    microvm.qemu.extraArgs =
+                      builtins.concatMap (d: [
+                        "-device"
+                        "virtio-input-host-pci,evdev=${d}"
+                      ])
+                      configH.ghaf.hardware.definition.virtioInputHostEvdevs;
+                  };
                 in
-                  [guivmPCIPassthroughModule]
+                  [
+                    guivmPCIPassthroughModule
+                    guivmVirtioInputHostEvdevModule
+                  ]
                   ++ guivmExtraModules;
               };
               virtualization.microvm.appvm = {
