@@ -1,8 +1,3 @@
-* Use NixOS's minimal installation CD as a base
-* Running disko
-  * How disko gets its configuration?
 * Building script
-  * Disko configuration
-* Change all raw-efi (inside Lenovo X1) to disko
-* Installer outside X1
+* Enlarge LVM partition on first boot
 * Clean out old installer stuff
