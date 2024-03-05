@@ -10,7 +10,7 @@
   inherit (inputs) jetpack-nixos lanzaboote microvm nixos-generators nixos-hardware nixpkgs disko self;
 in
   lib.foldr lib.recursiveUpdate {} [
-    (import ./nvidia-jetson-orin {inherit lib nixpkgs nixos-generators microvm jetpack-nixos;})
+    (import ./nvidia-jetson-orin {inherit self lib nixpkgs nixos-generators microvm jetpack-nixos;})
     (import ./vm.nix {inherit lib nixos-generators microvm;})
     (import ./generic-x86_64.nix {inherit self lib nixos-generators microvm;})
     (import ./lenovo-x1 {inherit lib microvm lanzaboote disko;})

@@ -11,5 +11,7 @@
 
     ./ota-utils-fix.nix
     ./virtualization
+
+    ./optee.nix
   ];
 }

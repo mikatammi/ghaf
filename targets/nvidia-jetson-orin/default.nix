@@ -4,6 +4,7 @@
 # Configuration for NVIDIA Jetson Orin AGX/NX
 #
 {
+  self,
   lib,
   nixpkgs,
   nixos-generators,
@@ -12,16 +13,6 @@
 }: let
   name = "nvidia-jetson-orin";
   system = "aarch64-linux";
-
-  # Import custom format module
-  formatModule = {
-    imports = [
-      # Needed for formatAttr
-      (nixos-generators + "/format-module.nix")
-
-      ../../modules/hardware/nvidia-jetson-orin/format-module.nix
-    ];
-  };
   nvidia-jetson-orin = som: variant: extraModules: let
     netvmExtraModules = [
       {
@@ -45,12 +36,16 @@
 
       modules =
         [
+          (nixos-generators + "/format-module.nix")
+          ../../modules/jetpack/nvidia-jetson-orin/format-module.nix
           jetpack-nixos.nixosModules.default
-          ../../modules/hardware/nvidia-jetson-orin
           microvm.nixosModules.host
-          ../../modules/host
-          ../../modules/virtualization/microvm/microvm-host.nix
-          ../../modules/virtualization/microvm/netvm.nix
+          self.nixosModules.common
+          self.nixosModules.desktop
+          self.nixosModules.host
+          self.nixosModules.jetpack
+          self.nixosModules.microvm
+
           {
             ghaf = {
               hardware.nvidia.orin = {
@@ -86,10 +81,7 @@
           }
 
           (import ./optee.nix {inherit jetpack-nixos;})
-
-          formatModule
         ]
-        ++ (import ../../modules/module-list.nix)
         ++ extraModules;
     };
   in {
