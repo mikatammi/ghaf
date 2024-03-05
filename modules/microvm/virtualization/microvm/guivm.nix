@@ -90,7 +90,10 @@
           ];
         };
 
-        imports = import ../../module-list.nix;
+        imports = [
+          ../../../common
+          ../../../desktop
+        ];
 
         # Waypipe service runs in the GUIVM and listens for incoming connections from AppVMs
         systemd.user.services.waypipe = {

@@ -91,7 +91,7 @@
           writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
         };
 
-        imports = import ../../module-list.nix;
+        imports = [../../../common];
       })
     ];
   };

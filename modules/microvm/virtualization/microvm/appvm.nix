@@ -41,9 +41,6 @@
           ghaf = {
             users.accounts.enable = lib.mkDefault configHost.ghaf.users.accounts.enable;
 
-            # Don't enable Wayland compositor inside every AppVM
-            profiles.graphics.enable = false;
-
             development = {
               ssh.daemon.enable = lib.mkDefault configHost.ghaf.development.ssh.daemon.enable;
               debug.tools.enable = lib.mkDefault configHost.ghaf.development.debug.tools.enable;
@@ -106,7 +103,7 @@
           };
           fileSystems."/run/waypipe-ssh-public-key".options = ["ro"];
 
-          imports = import ../../module-list.nix;
+          imports = [../../../common];
         })
       ];
     };
