@@ -18,12 +18,7 @@
   ];
 
   config = {
-    networking.hostName = lib.mkDefault "ghaf-host";
     system.stateVersion = lib.trivial.release;
-
-    nixpkgs.overlays = [
-      (import ../../overlays/custom-packages)
-    ];
 
     ####
     # temp means to reduce the image size
