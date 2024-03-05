@@ -15,9 +15,6 @@
     # This line breaks build of GUIVM. No investigations of a
     # root cause are done so far.
     #(modulesPath + "/profiles/minimal.nix")
-
-    # TODO: Refactor this under virtualization/microvm/host/networking.nix
-    ./networking.nix
   ];
 
   config = {
