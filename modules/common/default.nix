@@ -8,8 +8,6 @@
     ./version
     ./boot/systemd-boot-dtb.nix
     ./development
-    ./partitioning/disko-basic-postboot.nix
-    ./partitioning/lenovo-x1-disko-basic.nix
     ./windows-launcher
     ./users/accounts.nix
     ./firewall
