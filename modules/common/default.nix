@@ -5,16 +5,15 @@
 #
 {
   imports = [
-    ./version
     ./boot/systemd-boot-dtb.nix
-    ./development
-    ./windows-launcher
-    ./users/accounts.nix
-    ./firewall
-    ./virtualization/docker.nix
-    ./profiles
-    ./hardware
-    ./tpm2
     ./common.nix
+    ./development
+    ./firewall
+    ./hardware
+    ./profiles
+    ./tpm2
+    ./users/accounts.nix
+    ./version
+    ./virtualization/docker.nix
   ];
 }
