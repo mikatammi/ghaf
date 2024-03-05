@@ -4,7 +4,6 @@
   imports = [
     ./applications.nix
     ./debug.nix
-    ./graphics.nix
     ./release.nix
   ];
 }
