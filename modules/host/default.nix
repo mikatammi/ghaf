@@ -3,7 +3,7 @@
 #
 # Modules that should be only imported to host
 #
-{
+{lib, ...}: {
   networking.hostName = lib.mkDefault "ghaf-host";
 
   # Overlays should be only defined for host, because microvm.nix uses the
