@@ -1,7 +1,7 @@
 # Copyright 2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
 #
-# Common ghaf modules
+# ghaf's integration to jetpack-nixos
 #
 {
   imports = [
