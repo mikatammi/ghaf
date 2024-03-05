@@ -5,7 +5,6 @@
 #
 {
   imports = [
-    ./virtualization/microvm/common/vm-networking.nix
     ./virtualization/microvm/microvm-host.nix
     ./virtualization/microvm/netvm.nix
     ./virtualization/microvm/appvm.nix
