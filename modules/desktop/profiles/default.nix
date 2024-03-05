@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 {
   imports = [
+    ./applications.nix
     ./graphics.nix
   ];
 }
