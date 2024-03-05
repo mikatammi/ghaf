@@ -44,6 +44,7 @@
           self.nixosModules.desktop
           self.nixosModules.host
           self.nixosModules.jetpack
+          self.nixosModules.jetpack-microvm
           self.nixosModules.microvm
 
           {
@@ -70,12 +71,9 @@
               # Enable all the default UI applications
               profiles = {
                 applications.enable = true;
-
-                #TODO clean this up when the microvm is updated to latest
                 release.enable = variant == "release";
                 debug.enable = variant == "debug";
               };
-              # TODO when supported on x86 move under virtualization
               windows-launcher.enable = true;
             };
           }
