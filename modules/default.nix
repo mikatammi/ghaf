@@ -7,7 +7,6 @@ _: {
   flake.nixosModules = {
     common = import ./common;
     desktop = import ./desktop;
-    disko = import ./disko;
     jetpack = import ./jetpack;
     jetpack-microvm = import ./jetpack-microvm;
     lanzaboote = import ./lanzaboote;

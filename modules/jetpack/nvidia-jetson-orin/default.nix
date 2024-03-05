@@ -5,12 +5,9 @@
 {
   imports = [
     ./partition-template.nix
-    ../../boot/systemd-boot-dtb.nix
     ./jetson-orin.nix
 
     ./pci-passthrough-common.nix
-    ./agx-netvm-wlan-pci-passthrough.nix
-    ./nx-netvm-ethernet-pci-passthrough.nix
 
     ./ota-utils-fix.nix
     ./virtualization
