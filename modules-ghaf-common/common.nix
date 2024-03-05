@@ -1,5 +1,8 @@
 # Copyright 2022-2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
+#
+# TODO: Refactor even more.
+#       This is the old "host/default.nix" file.
 {
   lib,
   pkgs,
@@ -18,7 +21,7 @@
   ];
 
   config = {
-    networking.hostName = "ghaf-host";
+    networking.hostName = lib.mkDefault "ghaf-host";
     system.stateVersion = lib.trivial.release;
 
     nixpkgs.overlays = [
