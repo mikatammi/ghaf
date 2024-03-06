@@ -11,7 +11,7 @@
 in
   lib.foldr lib.recursiveUpdate {} [
     (import ./nvidia-jetson-orin {inherit self lib nixpkgs nixos-generators microvm jetpack-nixos;})
-    (import ./vm.nix {inherit lib nixos-generators microvm;})
+    (import ./vm.nix {inherit self lib nixos-generators microvm;})
     (import ./generic-x86_64.nix {inherit self lib nixos-generators microvm;})
     (import ./lenovo-x1 {inherit self lib microvm lanzaboote disko;})
     (import ./lenovo-x1-carbon-installer.nix {inherit self lib;})
