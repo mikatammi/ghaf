@@ -59,7 +59,7 @@
     }
   ];
 
-  wifi-signal-strength = pkgs.callPackage ../../packages/wifi-signal-strength {wifiDevice = (lib.lists.findFirst (d: d.name != null) null networkDevice).name;};
+  wifi-signal-strength = pkgs.callPackage ../../../packages/wifi-signal-strength {wifiDevice = (lib.lists.findFirst (d: d.name != null) null networkDevice).name;};
 in {
   config = lib.mkIf cfg.enable {
     ghaf.graphics.launchers = defaultLauncher;
