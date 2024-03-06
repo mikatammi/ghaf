@@ -16,5 +16,5 @@ in
     (import ./lenovo-x1 {inherit lib microvm lanzaboote disko;})
     (import ./lenovo-x1-carbon-installer.nix {inherit self lib;})
     (import ./imx8qm-mek.nix {inherit lib nixos-generators nixos-hardware microvm;})
-    (import ./microchip-icicle-kit.nix {inherit lib nixpkgs nixos-hardware;})
+    (import ./microchip-icicle-kit.nix {inherit self lib nixpkgs nixos-hardware;})
   ]
