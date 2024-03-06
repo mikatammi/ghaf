@@ -120,7 +120,7 @@
     ];
   };
   cfg = config.ghaf.virtualization.microvm.guivm;
-  vsockproxy = pkgs.callPackage ../../../packages/vsockproxy {};
+  vsockproxy = pkgs.callPackage ../../../../packages/vsockproxy {};
 
   # Importing kernel builder function and building guest_graphics_hardened_kernel
   buildKernel = import ../../../packages/kernel {inherit config pkgs lib;};
