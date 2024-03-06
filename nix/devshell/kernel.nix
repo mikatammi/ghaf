@@ -1,10 +1,9 @@
 # Copyright 2022-2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
-{inputs, ...}: {
+{self, ...}: {
   perSystem = {
     pkgs,
     self',
-    system,
     ...
   }: let
     mkKernelShell = {
@@ -55,10 +54,11 @@
     };
     devShells.kernel-jetson-orin = mkKernelShell {
       platform = "jetson-orin";
-      linux = inputs.jetpack-nixos.legacyPackages.${system}.kernel;
+      # linux = inputs.jetpack-nixos.legacyPackages.${system}.kernel;
+      linux = self.nixosConfigurations.nvidia-jetson-orin-nx-debug-from-x86_64.config.boot.kernelPackages.kernel;
       extraPackages = [pkgs.gawk];
       shellHook = ''
-        patchShebangs scripts/
+        patchShebangs --build scripts/
       '';
     };
   };
