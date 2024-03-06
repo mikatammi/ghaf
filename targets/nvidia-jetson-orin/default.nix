@@ -17,17 +17,20 @@
     netvmExtraModules = [
       {
         # The Nvidia Orin hardware dependent configuration is in
-        # modules/hardware/nvidia-jetson-orin/jetson-orin.nx
-        # Please refer to that section for hardware dependent netvm configuration.
+        # modules/jetpack and modules/jetpack-microvm. Please refer to that
+        # section for hardware dependent netvm configuration.
+
+        # Wireless Configuration. Orin AGX has WiFi enabled where Orin NX does
+        # not.
+
         # To enable or disable wireless
         networking.wireless.enable = som == "agx";
-        # Wireless Configuration
-        # Orin AGX has WiFi enabled where Orin Nx does not
 
         # For WLAN firmwares
-        hardware.enableRedistributableFirmware = som == "agx";
-        # Note: When 21.11 arrives replace the below statement with
-        # wirelessRegulatoryDatabase = true;
+        hardware = {
+          enableRedistributableFirmware = som == "agx";
+          wirelessRegulatoryDatabase = true;
+        };
       }
     ];
     hostConfiguration = lib.nixosSystem {
