@@ -43,7 +43,6 @@
             };
           }
         ]
-        ++ (import ../modules/module-list.nix)
         ++ extraModules;
     };
   in {
