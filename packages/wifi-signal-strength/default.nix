@@ -11,7 +11,7 @@
   # Replace the IP address with "net-vm.ghaf" after DNS/DHCP module merge
   netvm_address = "192.168.100.1";
 in
-  pkgs.writeShellApplication {
+  writeShellApplication {
     name = "wifi-signal-strength";
 
     text = ''
@@ -33,14 +33,14 @@ in
       # Get IP address of netvm
       address=$(${networkmanager}/bin/nmcli device show ${wifiDevice} | ${gawk}/bin/awk '{ if ($1=="IP4.ADDRESS[1]:") {print $2}}')
       # Get signal strength and ssid
-      connection=($(${networkmanager}/bin/nmcli -f IN-USE,SIGNAL,SSID dev wifi | ${gawk}/bin/awk '/^\*/{if (NR!=1) {print $2; print $3}}'))
-      connection[0]=$(if [ -z ''${connection[0]} ]; then echo "-1"; else echo ''${connection[0]}; fi)
+      connection="$(${networkmanager}/bin/nmcli -f IN-USE,SIGNAL,SSID dev wifi | ${gawk}/bin/awk '/^\*/{if (NR!=1) {print $2; print $3}}')"
+      connection[0]=$(if [ -z "''${connection[0]}" ]; then echo "-1"; else echo "''${connection[0]}"; fi)
       # Set the icon of signal level
-      signal_level=$(if [ ''${connection[0]} -gt 80 ]; then echo $signal3; elif [ ''${connection[0]} -gt 60 ]; then echo $signal2; elif [ ''${connection[0]} -gt 30 ]; then echo $signal1; elif [ ''${connection[0]} -gt 0 ]; then echo signal0; else echo $no_signal; fi)
-      tooltip=$(if [ -z $address ]; then echo ''${connection[0]}%; else echo $address ''${connection[0]}%; fi)
-      text=$(if [ -z ''${connection[1]} ]; then echo "No connection"; else echo ''${connection[1]} $signal_level; fi)
+      signal_level=$(if [ "''${connection[0]}" -gt 80 ]; then echo $signal3; elif [ "''${connection[0]}" -gt 60 ]; then echo $signal2; elif [ "''${connection[0]}" -gt 30 ]; then echo $signal1; elif [ "''${connection[0]}" -gt 0 ]; then echo $signal0; else echo $no_signal; fi)
+      tooltip=$(if [ -z "$address" ]; then echo "''${connection[0]}%"; else echo "$address ''${connection[0]}%"; fi)
+      text=$(if [ -z "''${connection[1]}" ]; then echo "No connection"; else echo "''${connection[1]} $signal_level"; fi)
       # Return as json format for waybar
-      echo "{\"percentage\":\""''${connection[0]}"\", \"text\":\""$text"\", \"tooltip\":\""$tooltip"\", \"class\":\"1\"}"
+      echo "{\"percentage\":\"''${connection[0]}\", \"text\":\"$text\", \"tooltip\":\"$tooltip\", \"class\":\"1\"}"
       # Use the control socket to close the ssh tunnel.
       ${openssh}/bin/ssh -q -S /tmp/nmcli_socket -O exit ghaf@${netvm_address}
     '';
