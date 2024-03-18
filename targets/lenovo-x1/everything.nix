@@ -164,4 +164,5 @@
 in [
   (lenovo-x1 "debug" debugModules)
   (lenovo-x1 "release" releaseModules)
+  (lenovo-x1 "labwc-debug" (debugModules ++ [./labwcModule.nix]))
 ]
