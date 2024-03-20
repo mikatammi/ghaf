@@ -22,11 +22,12 @@
   ];
   virtioInputHostEvdevs = [
     # Lenovo X1 touchpad and keyboard
-    "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
-    "/dev/mouse"
+    # "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+    # "/dev/mouse"
+    # "/dev/input/event0"
     "/dev/touchpad"
     # Lenovo X1 trackpoint (red button/joystick)
-    "/dev/input/by-path/platform-i8042-serio-1-event-mouse"
+    # "/dev/input/by-path/platform-i8042-serio-1-event-mouse"
   ];
 
   disks.disk1.device = "/dev/nvme0n1";

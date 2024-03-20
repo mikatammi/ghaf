@@ -78,21 +78,27 @@
           optimize.enable = false;
           vcpu = 2;
           mem = 2048;
-          hypervisor = "qemu";
-          shares = [
-            {
-              tag = "rw-waypipe-ssh-public-key";
-              source = "/run/waypipe-ssh-public-key";
-              mountPoint = "/run/waypipe-ssh-public-key";
-            }
-            {
-              tag = "ro-store";
-              source = "/nix/store";
-              mountPoint = "/nix/.ro-store";
-            }
-          ];
-          writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
+          # hypervisor = "cloud-hypervisor";
+          hypervisor = "crosvm";
+          # shares = [
+          #   {
+          #     tag = "rw-waypipe-ssh-public-key";
+          #     # proto = "virtiofs";
+          #     source = "/run/waypipe-ssh-public-key";
+          #     mountPoint = "/run/waypipe-ssh-public-key";
+          #   }
+          #   {
+          #     tag = "ro-store";
+          #     # proto = "virtiofs";
+          #     source = "/nix/store";
+          #     mountPoint = "/nix/.ro-store";
+          #   }
+          # ];
+          # writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
 
+          # cloud-hypervisor.extraArgs = [
+          #   "--vsock" "cid=${toString cfg.vsockCID}"
+          # ];
           qemu.extraArgs = [
             "-device"
             "vhost-vsock-pci,guest-cid=${toString cfg.vsockCID}"

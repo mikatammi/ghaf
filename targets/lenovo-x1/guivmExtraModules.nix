@@ -28,6 +28,17 @@
   };
 
   guivmVirtioInputHostEvdevModule = {
+    # microvm.cloud-hypervisor.extraArgs =
+    #   builtins.concatMap (d: [
+    #     "-device"
+    #     "virtio-input-host-pci,evdev=${d}"
+    #   ])
+    #   configH.ghaf.hardware.definition.virtioInputHostEvdevs;
+    microvm.crosvm.extraArgs =
+      builtins.concatMap (d: [
+        "--evdev=${d}"
+      ])
+      configH.ghaf.hardware.definition.virtioInputHostEvdevs;
     microvm.qemu.extraArgs =
       builtins.concatMap (d: [
         "-device"
