@@ -74,6 +74,7 @@
               virtualization.microvm-host.networkSupport = true;
 
               host.networking.enable = true;
+
               virtualization.microvm.netvm = {
                 enable = true;
                 extraModules = import ./netvmExtraModules.nix {
@@ -99,7 +100,9 @@
               };
               virtualization.microvm.appvm = {
                 enable = true;
-                vms = import ./appvms/default.nix {inherit pkgs;};
+                vms = import ./appvms/default.nix {
+                  inherit pkgs config;
+                };
               };
 
               # Enable all the default UI applications
