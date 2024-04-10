@@ -19,7 +19,7 @@ in
       ghaf.systemd = {
         withName = "host-systemd";
         enable = true;
-        boot.enable = true;
+        # boot.enable = true;
         withPolkit = true;
         withTpm2Tss = pkgs.stdenv.hostPlatform.isx86;
         withRepart = true;
