@@ -94,10 +94,13 @@
           ];
           writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
 
-          qemu.extraArgs = [
-            "-device"
-            "vhost-vsock-pci,guest-cid=${toString cfg.vsockCID}"
-          ];
+          qemu = {
+            machine = lib.mkIf (pkgs.system == "x86_64-linux") "q35";
+            extraArgs = [
+              "-device"
+              "vhost-vsock-pci,guest-cid=${toString cfg.vsockCID}"
+            ];
+          };
         };
 
         imports = [

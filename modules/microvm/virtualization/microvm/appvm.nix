@@ -103,12 +103,15 @@
             ];
             writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
 
-            qemu.extraArgs = [
-              "-M"
-              "q35,accel=kvm:tcg,mem-merge=on,sata=off"
-              "-device"
-              "vhost-vsock-pci,guest-cid=${toString cid}"
-            ];
+            qemu = {
+              machine = lib.mkIf (pkgs.system == "x86_64-linux") "q35";
+              extraArgs = [
+                "-M"
+                "q35,accel=kvm:tcg,mem-merge=on,sata=off"
+                "-device"
+                "vhost-vsock-pci,guest-cid=${toString cid}"
+              ];
+            };
           };
           fileSystems."/run/waypipe-ssh-public-key".options = ["ro"];
 

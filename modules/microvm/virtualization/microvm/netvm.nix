@@ -96,6 +96,8 @@
             }
           ];
           writableStoreOverlay = lib.mkIf config.ghaf.development.debug.tools.enable "/nix/.rw-store";
+
+          qemu.machine = lib.mkIf (pkgs.system == "x86_64-linux") "q35";
         };
 
         imports = [../../../common];
