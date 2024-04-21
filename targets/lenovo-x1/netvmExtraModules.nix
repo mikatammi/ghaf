@@ -94,28 +94,28 @@
       firewall.enable = true;
       firewall.extraCommands = "
         # Set the default policies
-          iptables -P INPUT DROP    
-          iptables -P FORWARD DROP
-          iptables -P OUTPUT ACCEPT 
+        iptables -P INPUT DROP
+        iptables -P FORWARD DROP
+        iptables -P OUTPUT ACCEPT
 
         # Allow loopback traffic
-          iptables -A INPUT -i lo -j ACCEPT
+        iptables -A INPUT -i lo -j ACCEPT
 
         # Forward incoming TCP traffic on port ${dendrite-pinecone.TcpPort} to internal network(element-vm)
-          iptables -t nat -A PREROUTING -i ${externalNic} -p tcp --dport ${dendrite-pinecone.TcpPort} -j DNAT --to-destination  ${elemen-vmIp}:${dendrite-pinecone.TcpPort}
+        iptables -t nat -A PREROUTING -i ${externalNic} -p tcp --dport ${dendrite-pinecone.TcpPort} -j DNAT --to-destination  ${elemen-vmIp}:${dendrite-pinecone.TcpPort}
 
         # Enable NAT for outgoing traffic
-          iptables -t nat -A POSTROUTING -o ${externalNic} -p tcp --dport ${dendrite-pinecone.TcpPort} -j MASQUERADE
+        iptables -t nat -A POSTROUTING -o ${externalNic} -p tcp --dport ${dendrite-pinecone.TcpPort} -j MASQUERADE
 
         # Enable NAT for outgoing traffic
-          iptables -t nat -A POSTROUTING -o ${externalNic} -p tcp --sport ${dendrite-pinecone.TcpPort} -j MASQUERADE
+        iptables -t nat -A POSTROUTING -o ${externalNic} -p tcp --sport ${dendrite-pinecone.TcpPort} -j MASQUERADE
 
         # Enable NAT for outgoing udp multicast traffic
         iptables -t nat -A POSTROUTING -o ${externalNic} -p udp -d ${dendrite-pinecone.McastUdpIp} --dport ${dendrite-pinecone.McastUdpPort} -j MASQUERADE
 
         # https://github.com/troglobit/smcroute?tab=readme-ov-file#usage
         iptables -t mangle -I PREROUTING -i ${externalNic} -d ${dendrite-pinecone.McastUdpIp} -j TTL --ttl-set 1
-        # ttl value must be set to 1 for avoiding multicast looping 
+        # ttl value must be set to 1 for avoiding multicast looping
         iptables -t mangle -I PREROUTING -i ${internalNic} -d ${dendrite-pinecone.McastUdpIp} -j TTL --ttl-inc 1
 
         # Accept forwarding

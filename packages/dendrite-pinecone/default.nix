@@ -15,7 +15,8 @@ with pkgs;
     src = pkgs.fetchFromGitHub {
       owner = "tiiuae";
       repo = "dendrite";
-      rev = "feature/ghaf-integration";
+      # branch is feature/ghaf-integration
+      rev = "53036309e34420bde92b81ac214985c3fa3fb975";
       sha256 = "sha256-UhA9deqWu3ERa08GMGV6/NVHEBZaAdPf7hXQb3GTRcA=";
     };
     subPackages = ["cmd/dendrite-demo-pinecone"];

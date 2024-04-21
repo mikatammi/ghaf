@@ -10,16 +10,33 @@
 in {
   name = "element";
 
-  packages = [pkgs.element-desktop pkgs.element-gps pkgs.gpsd dendrite-pinecone pkgs.tcpdump pkgs.pamixer];
+  packages = [
+    pkgs.element-desktop
+    pkgs.element-gps
+    pkgs.gpsd
+    dendrite-pinecone
+    pkgs.tcpdump
+    pkgs.pulseaudio
+  ];
   macAddress = "02:00:00:03:08:01";
   ramMb = 4096;
   cores = 4;
   extraModules = [
     {
       # Enable pulseaudio for user ghaf to access mic
+      security.rtkit.enable = true;
       sound.enable = true;
       hardware.pulseaudio.enable = true;
-      users.extraUsers.ghaf.extraGroups = ["audio"];
+      users.extraUsers.ghaf.extraGroups = ["audio" "video"];
+
+      hardware.pulseaudio.extraConfig = ''
+        load-module module-tunnel-sink sink_name=element-speaker server=audio-vm.ghaf:4713 format=s16le channels=2 rate=48000
+        load-module module-tunnel-source source_name=element-mic server=audio-vm.ghaf:4713 format=s16le channels=2 rate=48000
+
+        # Set sink and source default max volume to about 90% (0-65536)
+        set-sink-volume element-speaker 60000
+        set-source-volume element-mic 60000
+      '';
 
       systemd.network = {
         enable = true;
@@ -65,7 +82,6 @@ in {
         wantedBy = ["multi-user.target"];
       };
 
-
       systemd.services."dendrite-pinecone" = {
         description = "Dendrite is a second-generation Matrix homeserver with Pinecone which is a next-generation P2P overlay network";
         enable = true;
@@ -84,19 +100,11 @@ in {
         # Lenovo X1 integrated usb webcam
         "-device"
         "qemu-xhci"
-        "-device"
-        "usb-host,hostbus=3,hostport=8"
+        # "-device"
+        # "usb-host,hostbus=3,hostport=8"
         # External USB GPS receiver
         "-device"
         "usb-host,vendorid=0x067b,productid=0x23a3"
-        # Connect sound device to hosts pulseaudio socket
-        "-audiodev"
-        "pa,id=pa1,server=unix:/run/pulse/native"
-        # Add HDA sound device to guest
-        "-device"
-        "intel-hda"
-        "-device"
-        "hda-duplex,audiodev=pa1"
       ];
     }
   ];
