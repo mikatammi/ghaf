@@ -6,7 +6,7 @@
 # TII SSRC Secure Technologies: Ghaf Framework
 
 <p align="center">
-  <img src="./docs/src/img/1600px-Ghaf_logo.svg" alt="Ghaf Logo" width="50%" height="50%" />
+  <img src="./GHAFPRIDE.png" alt="Ghaf Logo" width="100%" height="50%" />
 </p>
 
 <div align="center">
